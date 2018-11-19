@@ -11,6 +11,7 @@ def data(filepath):
     :param filepath : fichier ruby à analyser
     :return dict : dictionnaire contenant le critère et sa valeur"""
     dict={}
+<<<<<<< HEAD
     dict['Nombrefonctions']=count_functions(filepath)
     dict['Nombretests']=count_tests(filepath)
     dict['Nombrecommentaires']=commentaires(filepath)
@@ -18,6 +19,15 @@ def data(filepath):
     dict['Taillefonctions']=function_size(filepath)
     dict['Nombrelignes']=num_lines
     return dict
+=======
+    dict['Nombre fonctions']=count_functions(filepath)
+    dict['Nombre tests']=count_tests(filepath)
+    dict['Nombre commentaires']=commentaires(filepath)
+    dict['Nombre variables']=count_variables(filepath)
+    dict['Taille fonctions']=function_size(filepath)
+    return(dict)
+    print(dict)
+>>>>>>> brancheClara
 
 data('C:/Users/Gros/PycharmProjects/Lequipe/EventCandidatA.rb')
 
