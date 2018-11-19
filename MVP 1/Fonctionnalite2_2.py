@@ -11,4 +11,3 @@ def count_tests(filepath) :
     return(count)
 
 filepath = r'C:\Users\Camille\PycharmProjects\Lequipe\Lequipe\EventCandidatATest.rb'
-print(count_tests (filepath))

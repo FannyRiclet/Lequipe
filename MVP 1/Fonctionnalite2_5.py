@@ -14,12 +14,14 @@ def function_size(filepath) :
                 count=1
                 i=k+1
                 while "def" not in lines[i] and i < len(lines)-1 :
-                    count+=1
+                    if lines[i]!= '\n' and lines[i][0] != '#' :
+                        count+=1
                     i+=1
                 fct_size.append(count)
         L=[fct_size,max(fct_size),sum(fct_size)/len(fct_size)]
-        return L
+        print(L)
 
-#function_size('C:/Users/Gros/PycharmProjects/Lequipe/EventCandidatA.rb')
+function_size('C:/Users/Gros/PycharmProjects/Lequipe/EventCandidatA.rb')
 
-filepath='C:/Users/Gros/PycharmProjects/Lequipe/EventCandidatA.rb'
+
+
