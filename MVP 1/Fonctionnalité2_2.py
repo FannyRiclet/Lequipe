@@ -7,4 +7,4 @@ def count_tests(filepath) :
                 count += 1
     print("Le code contient {} tests".format(count))
 
-filepath= C:\Utilisateurs\Camille\PycharmProjects\Lequipe\Lequipe\Initialisation\EventCandidatATest.rb
+filepath = 'C:\Utilisateurs\Camille\PycharmProjects\Lequipe\Lequipe\Initialisation\EventCandidatATest.rb'
