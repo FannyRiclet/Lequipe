@@ -1,4 +1,4 @@
-from Fonctionnalite2_1 import import *
+from Fonctionnalite2_1 import *
 from Fonctionnalite2_2 import *
 from Fonctionnalite2_3 import *
 from Fonctionnalite2_4 import *
@@ -15,7 +15,11 @@ def data(filepath):
     dict['Nombrecommentaires']=commentaires(filepath)
     dict['Nombrevariables']=count_variables(filepath)
     dict['Taillefonctions']=function_size(filepath)
+    dict['Nombrelignes']=num_lines
     return dict
 
 filepath = '/Users/marinewigniolle/PycharmProjects/Codingweek_semaine2/Lequipe/EventCandidatA.rb'
 
+with open(filepath, 'r') as f:
+    lines = f.readlines()
+    num_lines = len([l for l in lines if l.strip(' \n') != ''])
