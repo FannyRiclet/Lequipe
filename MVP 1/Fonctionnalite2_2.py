@@ -10,4 +10,4 @@ def count_tests(filepath) :
                 count += 1
     return(count)
 
-
+filepath = r'C:\Users\Camille\PycharmProjects\Lequipe\Lequipe\EventCandidatATest.rb'
