@@ -4,8 +4,6 @@ from Fonctionnalite2_3 import *
 from Fonctionnalite2_4 import *
 from Fonctionnalite2_5 import *
 
-
-
 def data(filepath):
     """Renvoie les données brutes des critères pour analyser un fichier Ruby d'un candidat
     :param filepath : fichier ruby à analyser
@@ -17,6 +15,5 @@ def data(filepath):
     dict['Nombrevariables']=count_variables(filepath)
     dict['Taillefonctions']=function_size(filepath)
     return dict
-
 
 

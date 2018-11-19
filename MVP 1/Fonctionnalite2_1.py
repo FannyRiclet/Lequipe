@@ -11,6 +11,4 @@ def count_functions(filepath) :
                 count+=1
     return(count)
 
-filepath = 'C:/Users/Gros/PycharmProjects/Lequipe/EventCandidatA.rb'
 
-#count_functions(filepath)
