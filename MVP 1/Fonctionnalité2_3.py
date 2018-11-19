@@ -4,6 +4,9 @@ with open('C:/Users/Arnaud et Lydie/Desktop/Lison/CS/SIP/Coding_weeks/Doctolib/L
    #print(file)
 
 def commentaires(file):
+    """Compte le nombre de commentaires utilisés dans un fichier ruby
+    :param filepath : fichier ruby à analyser
+    :return count : nombre de commentaires du fichier"""
     i=0
     l=len(file)
     nombre=0
