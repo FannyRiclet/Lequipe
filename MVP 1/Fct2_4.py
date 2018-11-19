@@ -17,5 +17,3 @@ def count_variables(filepath) :
     return(count)
 
 filepath='C:/Users/Kumquat/Documents/Lequipe/EventCandidatA.rb'
-
-count_variables(filepath)
