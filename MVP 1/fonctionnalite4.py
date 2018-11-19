@@ -4,4 +4,4 @@ def note_rapport_tests_fonctions(nb_tests,nb_fonctions):
         return 10
     else:
         return rapport*10
-    
+
