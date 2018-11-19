@@ -8,6 +8,6 @@ def count_tests(filepath) :
         for line in lines :
             if "test" in line :
                 count += 1
-    print("Le code contient {} tests".format(count))
+    return(count)
 
 filepath = 'C:\Utilisateurs\Camille\PycharmProjects\Lequipe\Lequipe\Initialisation\EventCandidatATest.rb'
