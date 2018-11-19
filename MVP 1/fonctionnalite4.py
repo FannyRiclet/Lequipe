@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 from Fonctionnalite2_5 import *
 
 def note_functions(dict,filepath):
@@ -34,3 +35,28 @@ def note_rapport_tests_fonctions(nb_tests,nb_fonctions):
         return rapport*10
 >>>>>>> 9c55c1339d071178371e989ca28f207faf9e238c
 
+=======
+#rapport
+'''Rapport lignes comm/lignes total :
+0 : 0
+1 : 0,02
+2 : 0,04
+3 : 0,06
+4 : 0,08
+5 : 0,1
+6 : 0,12
+7 : 0,14
+8 : 0,16
+9 : 0,18
+10 : 0,2'''
+
+from Analyse_Globale import *
+
+def note_rapport_comm_ligne(dict):
+    nb_comm=dict['Nombrecommentaires']
+    nb_lignes=dict['Nombrelignes']
+    r=nb_comm/nb_lignes
+    return (r*1000)/2
+
+print(note_rapport_comm_ligne(data(filepath)))
+>>>>>>> branche_lison

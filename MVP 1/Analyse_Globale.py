@@ -16,9 +16,13 @@ def data(filepath):
     dict['Nombrecommentaires']=commentaires(filepath)
     dict['Nombrevariables']=count_variables(filepath)
     dict['Taillefonctions']=function_size(filepath)
+    dict['Nombrelignes']=num_lines
     return dict
 
 data('C:/Users/Gros/PycharmProjects/Lequipe/EventCandidatA.rb')
 
 
 
+with open(filepath, 'r') as f:
+    lines = f.readlines()
+    num_lines = len([l for l in lines if l.strip(' \n') != ''])
