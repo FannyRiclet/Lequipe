@@ -3,6 +3,7 @@
 ##MVP1 : créer un code Python qui détermine des critères sur un script Ruby
 ###Etape 1 : Etude du script Ruby
 #Choix des critères : analyse basique
+    # Critères choisis : nombre de fonctions, nombre de tests, nombre de commentaires, nombre d evariables
 #Comment apparaissent-ils dans le script ?
 
 ###Etape 2 : Coder pour chaque critère une fonction
