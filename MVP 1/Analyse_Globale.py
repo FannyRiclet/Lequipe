@@ -18,7 +18,7 @@ def data(filepath):
     dict['Taillefonctions']=function_size(filepath)
     return dict
 
-data('C:/Users/Gros/PycharmProjects/Lequipe')
+data('C:/Users/Gros/PycharmProjects/Lequipe/EventCandidatA.rb')
 
 
 

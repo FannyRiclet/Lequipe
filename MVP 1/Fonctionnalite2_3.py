@@ -12,4 +12,3 @@ def commentaires(file):
             i+=1
     return nombre
 
-print(commentaires('C:/Users/Gros/PycharmProjects/Lequipe/EventCandidatA.rb'))
