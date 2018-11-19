@@ -14,14 +14,24 @@ def function_size(filepath) :
                 count=1
                 i=k+1
                 while "def" not in lines[i] and i < len(lines)-1 :
+<<<<<<< HEAD
                     if lines[i] != '\n' and '#' not in lines[i][0]:
+=======
+                    if lines[i]!= '\n' and lines[i][0] != '#' :
+>>>>>>> f394c178b2dc94a4fa61317b9e0ba02e0d97a82e
                         count+=1
                     i+=1
                 fct_size.append(count)
         L=[fct_size,max(fct_size),sum(fct_size)/len(fct_size)]
         print(L)
+<<<<<<< HEAD
         return L
 
 function_size('C:/Users/Gros/PycharmProjects/Lequipe/EventCandidatA.rb')
+=======
 
-filepath='C:/Users/Gros/PycharmProjects/Lequipe/EventCandidatA.rb'
+function_size('C:/Users/Gros/PycharmProjects/Lequipe/EventCandidatA.rb')
+
+
+>>>>>>> f394c178b2dc94a4fa61317b9e0ba02e0d97a82e
+

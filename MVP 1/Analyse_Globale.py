@@ -1,8 +1,9 @@
-from Fonctionnalite2_1 import import *
+from Fonctionnalite2_1 import *
 from Fonctionnalite2_2 import *
 from Fonctionnalite2_3 import *
 from Fonctionnalite2_4 import *
 from Fonctionnalite2_5 import *
+
 
 
 def data(filepath):
@@ -17,5 +18,7 @@ def data(filepath):
     dict['Taillefonctions']=function_size(filepath)
     return dict
 
-filepath = '/Users/marinewigniolle/PycharmProjects/Codingweek_semaine2/Lequipe/EventCandidatA.rb'
+data('C:/Users/Gros/PycharmProjects/Lequipe')
+
+
 
