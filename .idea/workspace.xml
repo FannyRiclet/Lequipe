@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1fb73269-5077-4ef1-aae2-2a43f4295c3e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MVP 1/Fct2_1.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MVP 1/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Lequipe.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Lequipe.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="1fb73269-5077-4ef1-aae2-2a43f4295c3e" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,10 +50,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/MVP 1/Fct2_1.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="66" selection-start-line="11" selection-start-column="66" selection-end-line="11" selection-end-column="66" />
+            <state>
+              <caret selection-end-line="12" />
               <folding>
-                <marker date="1542624210360" expanded="true" signature="31:32" ph="..." />
+                <marker date="1542624423913" expanded="true" signature="31:32" ph="..." />
               </folding>
             </state>
           </provider>
@@ -128,6 +120,11 @@
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$USER_HOME$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Gros\PycharmProjects\Lequipe\MVP 1" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -201,10 +198,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/MVP 1/Fct2_1.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="66" selection-start-line="11" selection-start-column="66" selection-end-line="11" selection-end-column="66" />
+        <state>
+          <caret selection-end-line="12" />
           <folding>
-            <marker date="1542624210360" expanded="true" signature="31:32" ph="..." />
+            <marker date="1542624423913" expanded="true" signature="31:32" ph="..." />
           </folding>
         </state>
       </provider>
