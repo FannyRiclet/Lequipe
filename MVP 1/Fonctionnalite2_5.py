@@ -23,4 +23,5 @@ def function_size(filepath) :
 
 function_size('C:/Users/Gros/PycharmProjects/Lequipe/EventCandidatA.rb')
 
-filepath='C:/Users/Gros/PycharmProjects/Lequipe/EventCandidatA.rb'
+
+
