@@ -1,5 +1,5 @@
 def count_variables(filepath) :
-    """Compte le nombre de variables utilisée dans un fichier ruby
+    """Compte le nombre de variables utilisées dans un fichier ruby
     :param filepath : fichier ruby à analyser
     :return count : nombre de variables du fichier"""
     with open(filepath,'r') as file :
