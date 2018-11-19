@@ -1,4 +1,5 @@
 def count_functions(filepath) :
+    #ne prend pas en compte les fonctions "scope"
     with open(filepath,'r') as file :
         lines=file.readlines()
         count=0
