@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 from Fonctionnalite2_5 import *
 
 def note_functions(dict,filepath):
@@ -26,16 +24,16 @@ def note_functions(dict,filepath):
             return 0
 
 
-=======
+
 def note_rapport_tests_fonctions(nb_tests,nb_fonctions):
     rapport = nb_tests/nb_fonctions
     if rapport > 1:
         return 10
     else:
         return rapport*10
->>>>>>> 9c55c1339d071178371e989ca28f207faf9e238c
 
-=======
+
+
 #rapport
 '''Rapport lignes comm/lignes total :
 0 : 0
@@ -59,4 +57,4 @@ def note_rapport_comm_ligne(dict):
     return (r*1000)/2
 
 print(note_rapport_comm_ligne(data(filepath)))
->>>>>>> branche_lison
+
