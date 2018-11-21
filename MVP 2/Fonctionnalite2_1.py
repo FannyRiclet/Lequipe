@@ -14,9 +14,9 @@ def longueur_nom_fonctions(filepath):
                         count+=1
                     i+=1
                 liste_longueurs.append(count)
-    return(max(liste_longueurs),min(liste_longueurs))
+    return([liste_longueurs,sum(liste_longueurs)/len(liste_longueurs)])
 
-
+longueur_nom_fonctions('C:/Users/Gros/PycharmProjects/Lequipe/EventCandidatA.rb')
 
 '''
 TEST

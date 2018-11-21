@@ -18,6 +18,6 @@ def count_imbrication(filepath):
                 k+=1
             else:
                 k+=1
-    return L
+    return(sum(L)/len(L))
 
-count_imbrication('/Users/marinewigniolle/PycharmProjects/Codingweek_semaine2/Lequipe/EventCandidatA.rb')
+count_imbrication('C:/Users/Gros/PycharmProjects/Lequipe/EventCandidatA.rb')

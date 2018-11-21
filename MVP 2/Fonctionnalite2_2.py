@@ -13,4 +13,6 @@ def longueur_nom_variables(filepath):
                     count+=1
                     i-=1 #on rebrousse chemin
                 liste_longueurs.append(count)
-    return(max(liste_longueurs),min(liste_longueurs))
+    return([liste_longueurs, sum(liste_longueurs)/100])
+
+longueur_nom_variables('C:/Users/Gros/PycharmProjects/Lequipe/EventCandidatA.rb')
