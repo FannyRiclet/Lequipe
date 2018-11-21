@@ -1,9 +1,3 @@
-from Fonctionnalite2_1 import *
-from Fonctionnalite2_2 import *
-from Fonctionnalite2_3 import *
-from Fonctionnalite2_4 import *
-from Fonctionnalite2_5 import *
-
 def data(filepath):
     """Renvoie les données brutes des critères pour analyser un fichier Ruby d'un candidat
     :param filepath : fichier ruby à analyser
@@ -16,11 +10,3 @@ def data(filepath):
     dict['Taille fonctions']=function_size(filepath)
     print(dict)
     return(dict)
-
-<<<<<<< HEAD
-=======
-
-data('C:/Users/Gros/PycharmProjects/Lequipe/EventCandidatA.rb')
-
-
->>>>>>> ba5cc7880fb6ba5a1b73f4931053871818d485e2
