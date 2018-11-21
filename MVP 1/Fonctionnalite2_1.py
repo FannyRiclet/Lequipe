@@ -10,4 +10,3 @@ def count_functions(filepath) :
                 count+=1
     return(count)
 
-count_functions('/Users/marinewigniolle/PycharmProjects/Codingweek_semaine2/Lequipe/EventCandidatA.rb')

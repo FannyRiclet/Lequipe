@@ -17,6 +17,9 @@ def data2(filepath,filepathtest):
     #dict['Nom fonctions']=fanny(filepath)
     return(dict)
 
+filepath='C:/Users/Gros/PycharmProjects/Lequipe/EventCandidatA.rb'
+filepathtest='C:/Users/Gros/PycharmProjects/Lequipe/EventCandidatATest.rb'
+
 
 def donnees_brutes_candidat2(filepath,filepathtest) :
     donnees_brutes=data2(filepath,filepathtest)
@@ -28,8 +31,4 @@ def donnees_brutes_candidat2(filepath,filepathtest) :
                 #['Nom fonctions, donnees_brutes['Nom fonctions'][2]
                      ])
     pd.table = pd.DataFrame(data=table[1:,1:], index=table[1:,0], columns=table[0,1:])
-    print(pd.table)
     return(pd.table)
-
-data2('C:/Users/Gros/PycharmProjects/Lequipe/EventCandidatA.rb','C:/Users/Gros/PycharmProjects/Lequipe/EventCandidatATest.rb')
-donnees_brutes_candidat2('C:/Users/Gros/PycharmProjects/Lequipe/EventCandidatA.rb','C:/Users/Gros/PycharmProjects/Lequipe/EventCandidatATest.rb')
