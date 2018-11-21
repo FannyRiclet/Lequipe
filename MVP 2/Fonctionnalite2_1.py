@@ -3,6 +3,7 @@
 def longueur_nom_fonctions(filepath):
     with open(filepath,'r') as file :
         lines=file.readlines()
+        liste_longueurs=[]
         for line in lines :
             if "def" in line :
                 position=line.find("def")
@@ -12,9 +13,10 @@ def longueur_nom_fonctions(filepath):
                     if line[i]!=' ':
                         count+=1
                     i+=1
-                print(count)
+                liste_longueurs.append(count)
+    return(max(liste_longueurs),min(liste_longueurs))
 
-filepath='C:/Users/Arnaud et Lydie/Desktop/Lison/CS/SIP/Coding_weeks/Doctolib/Lequipe/EventCandidatA.rb'
+
 
 '''
 TEST

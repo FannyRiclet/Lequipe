@@ -3,6 +3,7 @@
 def longueur_nom_variables(filepath):
     with open(filepath,'r') as file :
         lines=file.readlines()
+        liste_longueurs=[]
         for line in lines :
             if " = " in line :
                 position=line.find(" = ")
@@ -11,4 +12,5 @@ def longueur_nom_variables(filepath):
                 while i>=0 and line[i]!=' ':
                     count+=1
                     i-=1 #on rebrousse chemin
-                print(count)
+                liste_longueurs.append(count)
+    return(max(liste_longueurs),min(liste_longueurs))
