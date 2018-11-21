@@ -11,6 +11,3 @@ def data(filepath,filepathtest):
     dict['Nombre variables']=count_variables(filepath)
     dict['Taille fonctions']=function_size(filepath)
     return(dict)
-
-
-
