@@ -30,16 +30,16 @@ def singulier(mot) :
 
 
 def name_in_english(variable) :
-    """Vérifier qu'une varibale est bien constituée de mots en anglais
+    """Vérifier qu'une variable est bien constituée de mots en anglais
     :param variable : nom de la variable à tester
     :return booléen indiquant si ce nom est en anglais ou non"""
     pos = 0
     while pos < len(variable) :
         mot = ""
-        while pos < len(variable) and variable[pos] in alphabet :
+        while pos < len(variable) and variable[pos] in alphabet : #extraction des mots dans variable
             mot += variable[pos]
             pos += 1
-        if mot != "" and mot not in word_list and singulier(mot) not in word_list:
+        if mot != "" and mot not in word_list and singulier(mot) not in word_list: #test du mot et de son singulier
             return(False)
         pos += 1
     return(True)
@@ -62,30 +62,61 @@ def variables_comprehensibles(filepath) :
     :return proportion de variables correctes"""
     with open(filepath,'r') as file :
         lines=file.readlines()
-        words_in_english=[]
+        words_in_english=[] #initialisation de la liste contenant des booléens indiquant si les noms de variables sont composés de mots anglais
+
         for line in lines :
-            if "def" in line : #considère les variables définies comme variables d'une fonction
+            if " def " in line : #considère les variables définies comme variables d'une fonction
                 if "(" and ")" in line : #si au moins une variable est définie dans la fonction
                     pos = line.find("(") + 1 #position de la première variable
+
                     while pos < len(line) :
                         nom_var = ""
+
                         while pos < len(line) and line[pos] not in [")",",", "="] : #extraction du nom complet de la variable :
                             nom_var += line[pos]
                             pos += 1
+
                         if pos < len(line) and line[pos] == "=" : #cas où une variable est définie comme égale à quelque chose
-                            while pos < len(line) and line[pos] not in [",",")"] :
+                            while pos < len(line) and line[pos] not in [",",")"] : #recherche de la prochaine variable
                                 pos += 1
+
                         pos += 1
-                        if not nom_var == "\n" :
+
+                        if not nom_var == "\n" : #cas où un saut de ligne est considéré
                             words_in_english.append(name_in_english(nom_var))
+
+
             elif " = " in line and "where" not in line: #considère les autres variables
                 pos = 0
                 nom_var = ''
-                while pos < len(line) and line[pos] != "=" :
+
+                while pos < len(line) and line[pos] != "=" : #extraction du nom complet de la variable
                     nom_var += line[pos]
                     pos +=1
-                if not nom_var == "\n" :
+
+                if not nom_var == "\n" : #cas où un saut de ligne est considéré
                     words_in_english.append(name_in_english(nom_var))
+
+
         return(proportion_True(words_in_english))
 
 
+def fonctions_comprehensibles(filepath) :
+    """Vérifie que les noms des fonctions utilisées dans le programme utilisent des mots anglais
+    :param filepath : lien du programme à tester
+    :return proportion de fonctions aux noms corrects"""
+    with open(filepath,'r') as file :
+        lines = file.readlines()
+        words_in_english=[] #initialisation de la liste contenant des booléens indiquant si les noms de fonctions sont composés de mots anglais
+        for line in lines :
+            if " def " in line :
+                pos = line.find("def" ) + 4
+                nom_fct = ""
+
+                while pos < len(line) and line[pos] != "(" : #extraction du nom de la fonction
+                    nom_fct += line[pos]
+                    pos += 1
+
+                words_in_english.append(name_in_english(nom_fct))
+                
+        return(proportion_True(words_in_english))
