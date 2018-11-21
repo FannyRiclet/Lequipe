@@ -20,4 +20,4 @@ def count_imbrication(filepath):
                 k+=1
     return(sum(L)/len(L))
 
-count_imbrication('C:/Users/Gros/PycharmProjects/Lequipe/EventCandidatA.rb')
+

@@ -31,5 +31,3 @@ def donnees_brutes_candidat2(filepath,filepathtest) :
     print(pd.table)
     return(pd.table)
 
-data2('C:/Users/Gros/PycharmProjects/Lequipe/EventCandidatA.rb','C:/Users/Gros/PycharmProjects/Lequipe/EventCandidatATest.rb')
-donnees_brutes_candidat2('C:/Users/Gros/PycharmProjects/Lequipe/EventCandidatA.rb','C:/Users/Gros/PycharmProjects/Lequipe/EventCandidatATest.rb')

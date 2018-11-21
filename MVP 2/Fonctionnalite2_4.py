@@ -19,4 +19,4 @@ def nombre_duplications (filepath):
     return count
 
 
-nombre_duplications('C:/Users/Gros/PycharmProjects/Lequipe/EventCandidatA.rb')
+

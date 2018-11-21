@@ -1,6 +1,20 @@
-from fonctionnalite4 import *
+from Fonctionnalite4 import *
 import numpy as np
 import pandas as pd
+import *
+
+def data(filepath,filepathtest):
+    """Renvoie les données brutes des critères pour analyser un fichier Ruby d'un candidat
+    :param filepath : fichier ruby à analyser
+    :return dict : dictionnaire contenant le critère et sa valeur"""
+    dict={}
+    dict['Nombre fonctions']=count_functions(filepath)
+    dict['Nombre tests']=count_tests(filepathtest)
+    dict['Nombre commentaires']=commentaires(filepath)
+    dict['Nombre variables']=count_variables(filepath)
+    dict['Taille fonctions']=function_size(filepath)
+    return(dict)
+
 
 def note_candidat(filepath,filepathtest) :
     donnees_brutes=data(filepath,filepathtest)
@@ -11,6 +25,7 @@ def note_candidat(filepath,filepathtest) :
     pd.table=pd.DataFrame(data=table[1:,1:], index=table[1:,0], columns=table[0,1:])
     print(pd.table)
     return(pd.table)
+
 
 def donnees_brutes_candidat(filepath,filepathtest) :
     donnees_brutes=data(filepath,filepathtest)
@@ -24,5 +39,3 @@ def donnees_brutes_candidat(filepath,filepathtest) :
     print(pd.table)
     return(pd.table)
 
-note_candidat('C:/Users/Gros/PycharmProjects/Lequipe/EventCandidatA.rb','C:/Users/Gros/PycharmProjects/Lequipe/EventCandidatATest.rb')
-donnees_brutes_candidat('C:/Users/Gros/PycharmProjects/Lequipe/EventCandidatA.rb','C:/Users/Gros/PycharmProjects/Lequipe/EventCandidatATest.rb')
