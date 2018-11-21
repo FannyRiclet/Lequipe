@@ -1,4 +1,3 @@
-
 from Fonctionnalite2_5 import *
 from Resultat_candidats import *
 
@@ -50,6 +49,10 @@ def note_rapport_tests_fonctions(dict):
 9 : 0,18
 10 : 0,2'''
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> e048416b02694cf37d94b81caf76c3b0f396cafb
 def note_rapport_comm_ligne(dict):
     nb_comm=dict['Nombre commentaires']
     nb_lignes=sum(dict['Taille fonctions'][0])
