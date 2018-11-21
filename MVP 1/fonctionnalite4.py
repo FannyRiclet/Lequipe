@@ -1,37 +1,41 @@
+<<<<<<< HEAD
+=======
+from Fonctionnalite2_5 import *
+>>>>>>> brancheClara
 from Analyse_Globale import *
 
-def note_functions(dict,filepath):
-    if 4<=dict['Nombrefonctions']<=6:
+def note_functions(dict, filepath):
+    if 4<=dict['Nombre fonctions']<=6:
         note=10
         for k in range(len(function_size(filepath)[0])):
             if not 4<=function_size(filepath)[0][k]<=8:
-                note-=0,5
+                note-=0.5
         if note <0:
             return 0
-    if 2<=dict['Nombrefonctions']<4 or 6<dict['Nombrefonctions']<=8:
+    if 2<=dict['Nombre fonctions']<4 or 6<dict['Nombre fonctions']<=8:
         note=8
         for k in range(len(function_size(filepath)[0])):
             if not 4<=function_size(filepath)[0][k]<=8:
-                note-=0,5
+                note-=0.5
         if note <0:
             return 0
-    if 0<=dict['Nombrefonctions']<2 or 8<dict['Nombrefonctions']:
+    if 0<=dict['Nombre fonctions']<2 or 8<dict['Nombre fonctions']:
         note=5
         for k in range(len(function_size(filepath)[0])):
             if not 4<=function_size(filepath)[0][k]<=8:
-                note-=0,5
+                note-=0.5
         if note <0:
             return 0
+    return(note)
 
 
-
-def note_rapport_tests_fonctions(nb_tests,nb_fonctions):
+def note_rapport_tests_fonctions(dict):
+    nb_tests,nb_fonctions = dict['Nombre tests'],dict['Nombre fonctions']
     rapport = nb_tests/nb_fonctions
     if rapport > 1:
         return 10
     else:
         return rapport*10
-
 
 
 #rapport
@@ -48,13 +52,17 @@ def note_rapport_tests_fonctions(nb_tests,nb_fonctions):
 9 : 0,18
 10 : 0,2'''
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> brancheClara
 def note_rapport_comm_ligne(dict):
-    nb_comm=dict['Nombrecommentaires']
-    nb_lignes=dict['Nombrelignes']
+    nb_comm=dict['Nombre commentaires']
+    nb_lignes=sum(dict['Taille fonctions'][0])
     r=nb_comm/nb_lignes
     return (r*1000)/2
+<<<<<<< HEAD
 
 
 def rapport_variable_fonction(dico) :
@@ -71,3 +79,5 @@ def rapport_variable_fonction(dico) :
         return(0)
 
 
+=======
+>>>>>>> brancheClara
