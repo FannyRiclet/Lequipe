@@ -4,8 +4,6 @@ from Fonctionnalite2_3 import *
 from Fonctionnalite2_4 import *
 from Fonctionnalite2_5 import *
 
-
-
 def data(filepath):
     """Renvoie les données brutes des critères pour analyser un fichier Ruby d'un candidat
     :param filepath : fichier ruby à analyser
@@ -19,10 +17,3 @@ def data(filepath):
     dict['Nombrelignes']=num_lines
     return dict
 
-data('C:/Users/Gros/PycharmProjects/Lequipe/EventCandidatA.rb')
-
-
-
-with open(filepath, 'r') as f:
-    lines = f.readlines()
-    num_lines = len([l for l in lines if l.strip(' \n') != ''])

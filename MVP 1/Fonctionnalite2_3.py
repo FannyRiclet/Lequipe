@@ -11,4 +11,3 @@ def commentaires(file):
                 nombre+=1
             i+=1
     return nombre
-

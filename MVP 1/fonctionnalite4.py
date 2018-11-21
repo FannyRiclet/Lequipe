@@ -1,4 +1,4 @@
-from Fonctionnalite2_5 import *
+from Analyse_Globale import *
 
 def note_functions(dict,filepath):
     if 4<=dict['Nombrefonctions']<=6:
@@ -48,7 +48,7 @@ def note_rapport_tests_fonctions(nb_tests,nb_fonctions):
 9 : 0,18
 10 : 0,2'''
 
-from Analyse_Globale import *
+
 
 def note_rapport_comm_ligne(dict):
     nb_comm=dict['Nombrecommentaires']
@@ -56,5 +56,18 @@ def note_rapport_comm_ligne(dict):
     r=nb_comm/nb_lignes
     return (r*1000)/2
 
-print(note_rapport_comm_ligne(data(filepath)))
+
+def rapport_variable_fonction(dico) :
+    """Attribue une note au rapport du nombre de variables sur le nombre de fonctions
+    :param dico : dictionnaire issu du la fonction data """
+    nb_variable = dico['Nombrevariables']
+    nb_fonctions = dico['Nombrefonctions']
+    rapport = nb_variable/nb_fonctions
+    if rapport in range(2,5) :
+        return(10)
+    elif rapport == 1 or rapport == 5 :
+        return(8)
+    else :
+        return(0)
+
 
