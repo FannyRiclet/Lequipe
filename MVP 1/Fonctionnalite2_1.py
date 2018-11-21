@@ -9,8 +9,3 @@ def count_functions(filepath) :
             if "def" in line :
                 count+=1
     return(count)
-
-<<<<<<< HEAD
-=======
-
->>>>>>> e048416b02694cf37d94b81caf76c3b0f396cafb

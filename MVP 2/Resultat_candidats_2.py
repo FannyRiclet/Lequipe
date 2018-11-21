@@ -4,6 +4,7 @@ from Fonctionnalite2_1 import *
 from Fonctionnalite2_2 import *
 from Fonctionnalite2_3 import *
 from Fonctionnalite2_4 import *
+from Fonctionnalite2_5 import *
 
 def data2(filepath,filepathtest):
     """Renvoie les données brutes des critères pour analyser un fichier Ruby d'un candidat
@@ -14,7 +15,8 @@ def data2(filepath,filepathtest):
     dict['Longueur nom variable']=longueur_nom_variables(filepath)
     dict['Nombre imbrications']= count_imbrication(filepath)
     dict['Nombre duplications']=nombre_duplications(filepath)
-    #dict['Nom fonctions']=fanny(filepath)
+    dict['Nom fonction pertinent']= fonctions_comprehensibles(filepath)
+    dict['Nom variable pertinent']= variables_comprehensibles(filepath)
     return(dict)
 
 filepath='C:/Users/Gros/PycharmProjects/Lequipe/EventCandidatA.rb'
@@ -28,7 +30,8 @@ def donnees_brutes_candidat2(filepath,filepathtest) :
                 ['Longueur nom variable',donnees_brutes['Longueur nom variable'][1]],
                 ['Nombre imbrications',donnees_brutes['Nombre imbrications']],
                 ['Nombre duplications', donnees_brutes['Nombre duplications']],
-                #['Nom fonctions, donnees_brutes['Nom fonctions'][2]
+                ['Pertinence nom fonction', donnees_brutes['Nom fonction pertinent']],
+                ['Pertinence nom variable', donnees_brutes['Nom variable pertinent']]
                      ])
     pd.table = pd.DataFrame(data=table[1:,1:], index=table[1:,0], columns=table[0,1:])
     return(pd.table)
