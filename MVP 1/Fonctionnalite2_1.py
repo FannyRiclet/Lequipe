@@ -9,5 +9,3 @@ def count_functions(filepath) :
             if "def" in line :
                 count+=1
     return(count)
-
-

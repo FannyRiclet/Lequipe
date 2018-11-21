@@ -6,7 +6,6 @@ from Fonctionnalite2_5 import *
 from Fonctionnalite4 import *
 import numpy as np
 import pandas as pd
-import *
 
 def data(filepath,filepathtest):
     """Renvoie les données brutes des critères pour analyser un fichier Ruby d'un candidat
@@ -21,6 +20,19 @@ def data(filepath,filepathtest):
     return(dict)
 
 
+
+def data(filepath,filepathtest):
+    """Renvoie les données brutes des critères pour analyser un fichier Ruby d'un candidat
+    :param filepath : fichier ruby à analyser
+    :return dict : dictionnaire contenant le critère et sa valeur"""
+    dict={}
+    dict['Nombre fonctions']=count_functions(filepath)
+    dict['Nombre tests']=count_tests(filepathtest)
+    dict['Nombre commentaires']=commentaires(filepath)
+    dict['Nombre variables']=count_variables(filepath)
+    dict['Taille fonctions']=function_size(filepath)
+    return(dict)
+
 def note_candidat(filepath,filepathtest) :
     donnees_brutes=data(filepath,filepathtest)
     table=np.array([['','Notes'],
@@ -28,7 +40,6 @@ def note_candidat(filepath,filepathtest) :
                 ['Rapport test/fonction',note_rapport_tests_fonctions(donnees_brutes)],
                 ['Rapport commentaire/ligne',note_rapport_comm_ligne(donnees_brutes)]])
     pd.table=pd.DataFrame(data=table[1:,1:], index=table[1:,0], columns=table[0,1:])
-    print(pd.table)
     return(pd.table)
 
 
@@ -41,6 +52,4 @@ def donnees_brutes_candidat(filepath,filepathtest) :
                 ['Nombre variables', donnees_brutes['Nombre variables']],
                 ['Taille fonction moyenne', donnees_brutes['Taille fonctions'][2]]])
     pd.table = pd.DataFrame(data=table[1:,1:], index=table[1:,0], columns=table[0,1:])
-    print(pd.table)
     return(pd.table)
-
