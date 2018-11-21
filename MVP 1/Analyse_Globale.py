@@ -17,10 +17,9 @@ def data(filepath):
     print(dict)
     return(dict)
 
-<<<<<<< HEAD
-=======
-
-data('C:/Users/Gros/PycharmProjects/Lequipe/EventCandidatA.rb')
 
 
->>>>>>> ba5cc7880fb6ba5a1b73f4931053871818d485e2
+data(r'C:/Users/Camille/PycharmProjects/Lequipe/Initialisation/EventCandidatA.rb')
+
+
+
