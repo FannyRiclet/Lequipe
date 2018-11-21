@@ -1,7 +1,6 @@
 import *
 
 def data(filepath,filepathtest):
->>>>>>> 3bfa819885cf156347ccaaeb60ad76f050168b71
     """Renvoie les données brutes des critères pour analyser un fichier Ruby d'un candidat
     :param filepath : fichier ruby à analyser
     :return dict : dictionnaire contenant le critère et sa valeur"""
