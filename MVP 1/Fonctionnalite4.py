@@ -1,6 +1,5 @@
 
 from Fonctionnalite2_5 import *
->>>>>>> brancheClara
 from Analyse_Globale import *
 
 def note_functions(dict, filepath):

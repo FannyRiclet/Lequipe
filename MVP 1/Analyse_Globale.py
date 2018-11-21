@@ -1,12 +1,7 @@
-from Fonctionnalite2_1 import *
-from Fonctionnalite2_2 import *
-from Fonctionnalite2_3 import *
-from Fonctionnalite2_4 import *
-from Fonctionnalite2_5 import *
+import *
 
 
 def data(filepath,filepathtest):
->>>>>>> brancheClara
     """Renvoie les données brutes des critères pour analyser un fichier Ruby d'un candidat
     :param filepath : fichier ruby à analyser
     :return dict : dictionnaire contenant le critère et sa valeur"""
@@ -17,6 +12,5 @@ def data(filepath,filepathtest):
     dict['Nombre variables']=count_variables(filepath)
     dict['Taille fonctions']=function_size(filepath)
     return(dict)
-
 
 
