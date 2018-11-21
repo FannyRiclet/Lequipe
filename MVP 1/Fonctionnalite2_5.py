@@ -20,3 +20,5 @@ def function_size(filepath) :
                 fct_size.append(count)
         L=[fct_size,max(fct_size),sum(fct_size)/len(fct_size)]
         return L
+
+function_size('C:/Users/Gros/PycharmProjects/Lequipe/EventCandidatA.rb')
