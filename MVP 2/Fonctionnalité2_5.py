@@ -1,8 +1,8 @@
-def nombre_duplications:
+def nombre_duplications (filepath):
     """Compte le nombre de duplication de code dans un fichier ruby
     :param filepath : fichier ruby à analyser
     :return count : nombre de tests du fichier"""
-     with open(filepath,'r') as file :
+    with open(filepath,'r') as file :
         lines = file.readlines()
         liste_lignes=[]
         count = 0
