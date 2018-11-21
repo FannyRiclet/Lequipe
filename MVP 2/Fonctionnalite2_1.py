@@ -1,5 +1,11 @@
 #nom des fonctions
 
+import nltk
+nltk.download() #choisir words dans Corpora
+from nltk.corpus import words
+word_list = words.words()
+
+
 def longueur_nom_fonctions(filepath):
     with open(filepath,'r') as file :
         lines=file.readlines()
