@@ -4,10 +4,6 @@ from Fonctionnalite2_3 import *
 from Fonctionnalite2_4 import *
 from Fonctionnalite2_5 import *
 
-<<<<<<< HEAD
-def data(filepath):
-=======
-
 
 def data(filepath,filepathtest):
 >>>>>>> brancheClara
@@ -22,13 +18,5 @@ def data(filepath,filepathtest):
     dict['Taille fonctions']=function_size(filepath)
     return(dict)
 
-
-<<<<<<< HEAD
-
-data(r'C:/Users/Camille/PycharmProjects/Lequipe/Initialisation/EventCandidatA.rb')
-
-=======
-data('C:/Users/Gros/PycharmProjects/Lequipe/EventCandidatA.rb','C:/Users/Gros/PycharmProjects/Lequipe/EventCandidatATest.rb')
->>>>>>> brancheClara
 
 

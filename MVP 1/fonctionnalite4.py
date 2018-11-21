@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-=======
+
 from Fonctionnalite2_5 import *
 >>>>>>> brancheClara
 from Analyse_Globale import *
@@ -77,7 +76,3 @@ def rapport_variable_fonction(dico) :
         return(8)
     else :
         return(0)
-
-
-=======
->>>>>>> brancheClara
