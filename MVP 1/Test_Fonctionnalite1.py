@@ -1,5 +1,9 @@
 import pytest
 
+def les_filepath(Nom_dev,Nom_Candidat): #nom du developpeur et Nom_Candidat chaines de caractères
+    return(['C:/Users/{}/PycharmProjects/Lequipe/Event{}.rb'.format(Nom_dev,Nom_Candidat),'C:/Users/{}/PycharmProjects/Lequipe/Event{}Test.rb'.format(Nom_dev,Nom_Candidat)])
+
+
 from Fonctionnalite1_2_1 import *
 from Fonctionnalite1_2_2 import *
 from Fonctionnalite1_2_3 import *
@@ -7,50 +11,46 @@ from Fonctionnalite1_2_4 import *
 from Fonctionnalite1_2_5 import *
 
 
-def test_count_functions(emplacement_projet) :
+def test_count_functions(Nom_dev,Nom_Candidat) :
     """test la fonction count_functions
     :param emplacement_projet : lien pour accéder au projet Lequipe (ex : C:/Users/Kumquat/Document/ ou C:/Users/Gros/PycharmProjects/)"""
-    assert count_functions(emplacement_projet + "Lequipe\EventCandidatA.rb") == 10
+    assert count_functions(les_filepath(Nom_dev,Nom_Candidat)[0]) == 10
 
-def test_count_tests(emplacement_projet) :
-    assert count_tests(emplacement_projet + "Lequipe\EventCandidatATest.rb") == 13
+def test_count_tests(Nom_dev,Nom_Candidat) :
+    assert count_tests(les_filepath(Nom_dev,Nom_Candidat)[1]) == 13
 
-def test_commentaires(emplacement_projet) :
-    assert commentaires(emplacement_projet + "Lequipe\EventCandidatB.rb") == 21
+def test_commentaires(Nom_dev,Nom_Candidat) :
+    assert commentaires(les_filepath(Nom_dev,Nom_Candidat)[0]) == 21
 
-def test_count_variables(emplacement_projet) :
-    assert count_variables(emplacement_projet + "Lequipe\EventCandidatA.rb") == 10
+def test_count_variables(Nom_dev,Nom_Candidat) :
+    assert count_variables(les_filepath(Nom_dev,Nom_Candidat)[0]) == 10
 
-def test_function_size(emplacement_projet) :
-    assert function_size(emplacement_projet + "Lequipe\EventCandidatB.rb") == ([13,6,9,12,8,8,8], 13, 64/7)
+def test_function_size(Nom_dev,Nom_Candidat) :
+    assert function_size(les_filepath(Nom_dev,Nom_Candidat)[0]) == ([13,6,9,12,8,8,8], 13, 64/7)
     
 
 from Resultat_candidats import *
 
-def test_data(emplacement_projet) :
-    assert data(emplacement_projet + "Lequipe\EventCandidatB.rb", emplacement_projet + "Lequipe\EventCandidatBTest.rb") != {}
+def test_data(Nom_dev,Nom_Candidat) :
+    assert data(les_filepath(Nom_dev,Nom_Candidat)) != {}
 
-def test_note_candidat(emplacement_projet) :
-    assert not note_candidat(emplacement_projet + "Lequipe\EventCandidatB.rb", emplacement_projet + "Lequipe\EventCandidatBTest.rb").empty
+def test_note_candidat(Nom_dev,Nom_Candidat) :
+    assert not note_candidat(les_filepath(Nom_dev,Nom_Candidat)).empty
 
-def test_donnees_brutes_candidat(emplacement_projet) :
-    assert not donnees_brutes_candidat(emplacement_projet + "Lequipe\EventCandidatB.rb", emplacement_projet + "Lequipe\EventCandidatBTest.rb").empty
+def test_donnees_brutes_candidat(Nom_dev,Nom_Candidat) :
+    assert not donnees_brutes_candidat(les_filepath(Nom_dev,Nom_Candidat)).empty
 
 
 from Fonctionnalite1_4 import *
 
-def test_note_functions(emplacement_projet) :
-    filepath,filepathtest = emplacement_projet + "Lequipe\EventCandidatA.rb", emplacement_projet + "Lequipe\EventCandidatATest.rb"
-    assert note_functions(data(filepath,filepathtest),filepath) <= 10
+def test_note_functions(Nom_dev,Nom_Candidat) :
+    assert note_functions(data(les_filepath(Nom_dev,Nom_Candidat)),filepath) <= 10
 
-def test_note_rapport_tests_fonctions(emplacement_projet) :
-    filepath,filepathtest = emplacement_projet + "Lequipe\EventCandidatA.rb", emplacement_projet + "Lequipe\EventCandidatATest.rb"
-    assert 0 <= note_rapport_tests_fonctions(data(filepath,filepathtest),filepath) <= 10
+def test_note_rapport_tests_fonctions(Nom_dev,Nom_Candidat) :
+    assert 0 <= note_rapport_tests_fonctions(data(les_filepath(Nom_dev,Nom_Candidat)),filepath) <= 10
 
-def test_note_rapport_comm_ligne(emplacement_projet) :
-    filepath,filepathtest = emplacement_projet + "Lequipe\EventCandidatA.rb", emplacement_projet + "Lequipe\EventCandidatATest.rb"
-    assert 0 <= note_rapport_comm_ligne(data(filepath,filepathtest),filepath) <= 10
+def test_note_rapport_comm_ligne(Nom_dev,Nom_Candidat) :
+    assert 0 <= note_rapport_comm_ligne(data(les_filepath(Nom_dev,Nom_Candidat)),filepath) <= 10
 
-def test_rapport_variable_fonction(emplacement_projet) :
-    filepath,filepathtest = emplacement_projet + "Lequipe\EventCandidatA.rb", emplacement_projet + "Lequipe\EventCandidatATest.rb"
-    assert 0 <= rapport_variable_fonction(data(filepath,filepathtest),filepath) <= 10
+def test_rapport_variable_fonction(Nom_dev,Nom_Candidat) :
+    assert 0 <= rapport_variable_fonction(data(les_filepath(Nom_dev,Nom_Candidat)),filepath) <= 10
