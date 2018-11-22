@@ -1,14 +1,21 @@
 #comparer un candidat avec tous les autres en utilisant la fonction comparer deux candidats
-
+import sys
 import numpy as np
 
 #comparaison_deux_candidats
 #chaque candidat a un dico associé
+
+sys.path.append('../MVP 4')
+from Tableau_recapitulatif import *
+
+filepath=
 liste_noms_candidats=['CandidatA','CandidatB','CandidatC']
-liste_filepath_candidats=[print('{}/Event{}.rb'.format(filepath,x)) for x in liste_noms_candidats]
-liste_filepath_test_candidats=[print('{}/Event{}Test.rb'.format(filepath,x)) for x in liste_noms_candidats]
-#liste_criteres=
-#from Fonctionnalite3_2 import comparaison_deux_candidats
+liste_filepath_candidats=['{}/Event{}.rb'.format(filepath,x) for x in liste_noms_candidats]
+liste_filepath_test_candidats=['{}/Event{}Test.rb'.format(filepath,x) for x in liste_noms_candidats]
+liste_criteres=
+
+sys.path.append('../MVP 3')
+from Fonctionnalite3_2 import * #dont comparaison_deux_candidats
 
 
 def comparaison_globale(fp_candidat, fp_candidat_test):
