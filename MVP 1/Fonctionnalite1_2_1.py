@@ -1,5 +1,5 @@
 def count_functions(filepath) :
-    """Compte le nombre de fonctions utilisées dans un fichier ruby
+    """Compte le nombre de fonctions utilisees dans un fichier ruby
     :param filepath : fichier ruby à analyser
     :return count : nombre de fonctions du fichier"""
     with open(filepath,'r') as file :

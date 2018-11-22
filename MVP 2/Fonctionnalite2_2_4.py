@@ -7,9 +7,11 @@ def nombre_duplications (filepath):
         liste_lignes=[]
         count = 0
         for line in lines:
-            if not("end" in line):
+            if not(" end\n" in line) and line != "\n":
                 liste_lignes.append(line)
-        liste_lignes.sort()           #on trie la liste par odre alphabétique pour que ce soit plus simple à comparer
+        liste_lignes.sort()
+        print (liste_lignes)
+        #on trie la liste par odre alphabetique pour que ce soit plus simple à comparer
         for i in range (len(liste_lignes)-1):
             if liste_lignes[i]== liste_lignes[i + 1]:
                 count += 1

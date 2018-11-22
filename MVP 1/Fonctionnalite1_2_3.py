@@ -1,5 +1,5 @@
 def commentaires(file):
-    """Compte le nombre de commentaires utilisés dans un fichier ruby
+    """Compte le nombre de commentaires utilises dans un fichier ruby
     :param filepath : fichier ruby à analyser
     :return count : nombre de commentaires du fichier"""
     with open(file,'r') as file :
