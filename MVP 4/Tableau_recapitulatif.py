@@ -2,25 +2,26 @@ import sys
 
 sys.path.append('../MVP 1')
 from Resultat_candidats import *
-from Fonctionnalite2_1 import *
-from Fonctionnalite2_2 import *
-from Fonctionnalite2_3 import *
-from Fonctionnalite2_4 import *
-from Fonctionnalite2_5 import *
-from Fonctionnalite4 import *
+from Fonctionnalite1_2_1 import *
+from Fonctionnalite1_2_2 import *
+from Fonctionnalite1_2_3 import *
+from Fonctionnalite1_2_4 import *
+from Fonctionnalite1_2_5 import *
+from Fonctionnalite1_4 import *
 
-sys.path.pop()
+#sys.path.remove('../MVP 1')
 
 sys.path.append('../MVP 2')
 from Resultat_candidats_2 import *
-from Fonctionnalite2_1 import *
-from Fonctionnalite2_2 import *
-from Fonctionnalite2_3 import *
-from Fonctionnalite2_4 import *
-from Fonctionnalite2_5 import *
+from Fonctionnalite2_2_1 import *
+from Fonctionnalite2_2_2 import *
+from Fonctionnalite2_2_3 import *
+from Fonctionnalite2_2_4 import *
+from Fonctionnalite2_2_5 import *
 
 filepath='C:/Users/Gros/PycharmProjects/Lequipe/EventCandidatA.rb'
 filepathtest='C:/Users/Gros/PycharmProjects/Lequipe/EventCandidatATest.rb'
+
 
 def data_finale(filepath,filepathtest) :
     dict={}
@@ -35,18 +36,21 @@ def data_finale(filepath,filepathtest) :
     dict['Nombre duplications']=nombre_duplications(filepath)
     dict['Nom fonction pertinent']= fonctions_comprehensibles(filepath)
     dict['Nom variable pertinent']= variables_comprehensibles(filepath)
-    print(dict)
     return(dict)
 
+
 def donnees_brutes_candidat_finales(filepath,filepathtest) :
-    donnees_brutes=data(filepath,filepathtest)
+    donnees_brutes=data_finale(filepath,filepathtest)
+    print(donnees_brutes)
+    print(donnees_brutes['Longueur nom fonction'])
+    print(donnees_brutes['Longueur nom fonction'][1])
     table=np.array([['','Données brutes'],
                 ['Nombre fonctions',donnees_brutes['Nombre fonctions']],
                 ['Nombre tests',donnees_brutes['Nombre tests']],
                 ['Nombre commentaires',donnees_brutes['Nombre commentaires']],
                 ['Nombre variables', donnees_brutes['Nombre variables']],
                 ['Taille fonction moyenne', donnees_brutes['Taille fonctions'][2]]
-                ['Longueur nom fonction',donnees_brutes['Longueur nom fonction'][1]],
+               # ['Longueur nom fonction',donnees_brutes['Longueur nom fonction'][1]],
                 ['Longueur nom variable',donnees_brutes['Longueur nom variable'][1]],
                 ['Nombre imbrications',donnees_brutes['Nombre imbrications']],
                 ['Nombre duplications', donnees_brutes['Nombre duplications']],
@@ -56,5 +60,4 @@ def donnees_brutes_candidat_finales(filepath,filepathtest) :
     print(pd.table)
     return(pd.table)
 
-data_finale(filepath,filepathtest)
 donnees_brutes_candidat_finales(filepath,filepathtest)

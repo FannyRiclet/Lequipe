@@ -1,4 +1,4 @@
-from Fonctionnalite2_5 import *
+from Fonctionnalite1_2_5 import *
 from Resultat_candidats import *
 
 def note_functions(dict, filepath):
