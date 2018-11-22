@@ -23,7 +23,7 @@ def singulier(mot) :
                     mot_singulier += mot[k]
         else :#mots finissant par "s"
             for k in range(0,len(mot)-1) :
-            mot_singulier += mot[k]
+                mot_singulier += mot[k]
     else :
         mot_singulier = mot
     return(mot_singulier)
