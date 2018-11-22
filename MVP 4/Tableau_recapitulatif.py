@@ -49,7 +49,6 @@ def note_candidat(Nom_dev,Nom_Candidat) :
                 ['Rapport test/fonction',note_rapport_tests_fonctions(donnees_brutes)],
                 ['Rapport commentaire/ligne',note_rapport_comm_ligne(donnees_brutes)]])
     pd.table=pd.DataFrame(data=table[1:,1:], index=table[1:,0], columns=table[0,1:])
-    print(pd.table)
     return(table)
 
 
@@ -72,7 +71,6 @@ def donnees_brutes_candidat_finales(Nom_dev,Nom_Candidat) :
                 ['Pertinence nom variable', donnees_brutes['Nom variable pertinent']]
                     ])
     pd.table = pd.DataFrame(data=table[1:,1:], index=table[1:,0], columns=table[0,1:])
-    print(pd.table)
     return(table)
 
 donnees_brutes_candidat_finales('Gros','CandidatA')
