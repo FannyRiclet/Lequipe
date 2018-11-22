@@ -16,10 +16,17 @@ def comparaison_deux_candidats(filepath1,filepathtest1, filepath2, filepathtest2
     dict1=data_finale(filepath1,filepathtest1)
     dict2=data_finale(filepath2, filepathtest2)
     dico={}
+    c=0
     for x in liste_criteres :
-        dico[x]=min(dict1[x],dict2[x])/max(dict1[x],dict2[x])*100
-    return dico
-
-
-
-
+        if type(dict1[x]) == float or type(dict1[x]) == int :
+            if max(dict1[x],dict2[x]) == 0 :
+                dico[x]=0
+            else :
+                dico[x]=min(dict1[x],dict2[x])/max(dict1[x],dict2[x])*100
+        else :
+            avg1,avg2=dict1[x][1],dict2[x][1]
+            if max(avg1,avg2) == 0 :
+                dico[x]=0
+            else :
+                dico[x]=min(avg1,avg2)/max(avg1,avg2)*100
+    return(dico)

@@ -36,6 +36,15 @@ def data_finale(filepath,filepathtest) :
     dict['Nom variable pertinent']= variables_comprehensibles(filepath)
     return(dict)
 
+def note_candidat(filepath,filepathtest) :
+    donnees_brutes=data(filepath,filepathtest)
+    table=np.array([['','Notes'],
+                ['Nombre fonctions',note_functions(donnees_brutes,filepath)],
+                ['Rapport test/fonction',note_rapport_tests_fonctions(donnees_brutes)],
+                ['Rapport commentaire/ligne',note_rapport_comm_ligne(donnees_brutes)]])
+    pd.table=pd.DataFrame(data=table[1:,1:], index=table[1:,0], columns=table[0,1:])
+    return(pd.table)
+
 
 def donnees_brutes_candidat_finales(name_candidat) :
     filepath,filepathtest=file_candidate(name_candidat)
