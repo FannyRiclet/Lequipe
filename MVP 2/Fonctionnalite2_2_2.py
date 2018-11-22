@@ -19,6 +19,6 @@ def longueur_nom_variables(filepath):
                     count+=1
                     i-=1 #on rebrousse chemin
                 liste_longueurs.append(count)
-    return([liste_longueurs, sum(liste_longueurs)/100])
+    return([liste_longueurs, sum(liste_longueurs)/len(liste_longueurs)])
 
 

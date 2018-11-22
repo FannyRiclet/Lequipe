@@ -1,8 +1,8 @@
 import sys
 import numpy as np
 
-def les_filepath(filepath,Nom_Candidat): #filepath et Nom_Candidat chaines de caractères
-    return ('{}/Event{}.rb'.format(filepath,Nom_Candidat),'{}/Event{}Test.rb'.format(filepath,Nom_Candidat))
+def les_filepath(Nom_dev,Nom_Candidat): #nom du developpeur et Nom_Candidat chaines de caractères
+    return(['C:/Users/{}/PycharmProjects/Lequipe/Event{}.rb'.format(Nom_dev,Nom_Candidat),'C:/Users/{}/PycharmProjects/Lequipe/Event{}Test.rb'.format(Nom_dev,Nom_Candidat)])
 
 sys.path.append('../MVP 1')
 from Resultat_candidats import *
@@ -24,7 +24,7 @@ from Fonctionnalite2_2_3 import *
 from Fonctionnalite2_2_4 import *
 from Fonctionnalite2_2_5 import *
 
-def data_finale(filepath,filepathtest) :
+def data_finale(filepath,filpathtest) :
     dict={}
     dict['Nombre fonctions']=count_functions(filepath)
     dict['Nombre tests']=count_tests(filepathtest)
@@ -39,7 +39,8 @@ def data_finale(filepath,filepathtest) :
     dict['Nom variable pertinent']= variables_comprehensibles(filepath)
     return(dict)
 
-def note_candidat(filepath,filepathtest) :
+def note_candidat(Nom_dev,Nom_Candidat) :
+    filepath,filepathtest=les_filepath(Nom_dev,Nom_Candidat)[0],les_filepath(Nom_dev,Nom_Candidat)[1]
     donnees_brutes=data(filepath,filepathtest)
     table=np.array([['','Notes'],
                 ['Nombre fonctions',note_functions(donnees_brutes,filepath)],
@@ -49,13 +50,12 @@ def note_candidat(filepath,filepathtest) :
     return(pd.table)
 
 
-def donnees_brutes_candidat_finales(name_candidat) :
-    filepath,filepathtest=file_candidate(name_candidat)
+def donnees_brutes_candidat_finales(Nom_dev,Nom_Candidat) :
+    filepath,filepathtest=les_filepath(Nom_dev,Nom_Candidat)[0],les_filepath(Nom_dev,Nom_Candidat)[1]
     donnees_brutes=data_finale(filepath,filepathtest)
-    print(donnees_brutes)
-    print(donnees_brutes['Longueur nom fonction'])
-    print(type(donnees_brutes['Longueur nom fonction'][1]))
-    table=np.array([['name_candidat','Donnees brutes'],
+    table=np.array([['Donnees brutes',Nom_Candidat],
+                ['Filepath', filepath],
+                ['Filepathtest', filepathtest],
                 ['Nombre fonctions',donnees_brutes['Nombre fonctions']],
                 ['Nombre tests',donnees_brutes['Nombre tests']],
                 ['Nombre commentaires',donnees_brutes['Nombre commentaires']],
@@ -71,3 +71,5 @@ def donnees_brutes_candidat_finales(name_candidat) :
     pd.table = pd.DataFrame(data=table[1:,1:], index=table[1:,0], columns=table[0,1:])
     print(pd.table)
     return(pd.table)
+
+donnees_brutes_candidat_finales('Gros','CandidatA')
