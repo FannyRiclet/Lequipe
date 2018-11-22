@@ -7,7 +7,7 @@ def commentaires(file):
         i=0
         nombre=0
         while i<len(lines):
-            if lines[i][0]=='#':
+            if '#' in lines[i]:
                 nombre+=1
             i+=1
     return nombre

@@ -54,5 +54,4 @@ def donnees_brutes_candidat(filepath,filepathtest) :
     pd.table = pd.DataFrame(data=table[1:,1:], index=table[1:,0], columns=table[0,1:])
     return(pd.table)
 
-filepath='C:/Users/Gros/PycharmProjects/Lequipe/EventCandidatA.rb'
-filepathtest='C:/Users/Gros/PycharmProjects/Lequipe/EventCandidatATest.rb'
+

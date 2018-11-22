@@ -10,11 +10,11 @@ def function_size(filepath) :
         lines=file.readlines()
         fct_size=[]
         for k in range(0,len(lines)) :
-            if "def" in lines[k] :
+            if " def " in lines[k] :
                 count=1
                 i=k+1
-                while "def" not in lines[i] and i < len(lines)-1 :
-                    if lines[i]!= '\n' and lines[i][0] != '#' :
+                while i < len(lines)-1 and " def " not in lines[i] :
+                    if lines[i]!= '\n' and '#' not in lines[i]:
                         count+=1
                     i+=1
                 fct_size.append(count)

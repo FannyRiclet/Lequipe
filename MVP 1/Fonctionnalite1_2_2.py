@@ -6,7 +6,7 @@ def count_tests(filepath) :
         lines = file.readlines()
         count=0
         for line in lines :
-            if "test" in line :
+            if " test " in line :
                 count += 1
     return(count)
 

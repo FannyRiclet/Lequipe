@@ -6,7 +6,7 @@ def count_variables(filepath) :
         lines=file.readlines()
         count=0 #compteur de variables
         for line in lines :
-            if "def" in line : #compte variables définies comme variables d'une fonction
+            if " def " in line : #compte variables définies comme variables d'une fonction
                 if "(" and ")" in line : #si au moins une variable est définie dans la fonction
                     count +=1
                     for char in line :
