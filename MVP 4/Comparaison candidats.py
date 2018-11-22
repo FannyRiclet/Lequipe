@@ -1,5 +1,3 @@
-import numpy as np
-
 import sys
 import numpy as np
 
@@ -31,5 +29,3 @@ def data_candidats(Nom_dev, liste_noms_candidats) :
         table=np.c_[table,column]
     print(pd.DataFrame(data=table[1:,1:], index=table[1:,0], columns=table[0,1:]))
     return(table)
-
-data_candidats('Gros', liste_noms_candidats)
