@@ -7,11 +7,11 @@ def count_imbrication(filepath):
         L=[]
         k=0
         while k < len(lines):
-            if "def" in lines[k]:
+            if " def " in lines[k]:
                 count=0
                 k+=1
                 while k < len(lines) and not(""" end\n""" in lines[k]) :
-                    if " if " in lines[k] or "while" in lines[k] or "for" in lines[k] or "try" in lines[k]:
+                    if " if" in lines[k] or " while" in lines[k] or " for" in lines[k] or " try" in lines[k]:
                         count+=1
                     k+=1
                 L.append(count)

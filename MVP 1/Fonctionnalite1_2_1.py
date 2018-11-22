@@ -6,6 +6,6 @@ def count_functions(filepath) :
         lines=file.readlines()
         count=0
         for line in lines :
-            if "def" in line :
+            if " def " in line :
                 count+=1
     return(count)

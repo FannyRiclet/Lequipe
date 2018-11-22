@@ -5,7 +5,7 @@ def longueur_nom_fonctions(filepath):
         lines=file.readlines()
         liste_longueurs=[]
         for line in lines :
-            if "def" in line :
+            if " def " in line :
                 position=line.find("def")
                 count=0 #compte le nb de caracteres d'un nom de fonction
                 i=position+4 #indice qui parcourt la ligne, commence apres le def
