@@ -1,10 +1,10 @@
 import numpy as np
 import pandas as pd
-from Fonctionnalite2_1 import *
-from Fonctionnalite2_2 import *
-from Fonctionnalite2_3 import *
-from Fonctionnalite2_4 import *
-from Fonctionnalite2_5 import *
+from Fonctionnalite2_2_1 import *
+from Fonctionnalite2_2_2 import *
+from Fonctionnalite2_2_3 import *
+from Fonctionnalite2_2_4 import *
+from Fonctionnalite2_2_5 import *
 
 def data2(filepath,filepathtest):
     """Renvoie les données brutes des critères pour analyser un fichier Ruby d'un candidat
@@ -35,3 +35,4 @@ def donnees_brutes_candidat2(filepath,filepathtest) :
                      ])
     pd.table = pd.DataFrame(data=table[1:,1:], index=table[1:,0], columns=table[0,1:])
     return(pd.table)
+

@@ -1,9 +1,9 @@
-from Fonctionnalite2_1 import *
-from Fonctionnalite2_2 import *
-from Fonctionnalite2_3 import *
-from Fonctionnalite2_4 import *
-from Fonctionnalite2_5 import *
-from Fonctionnalite4 import *
+from Fonctionnalite1_2_1 import *
+from Fonctionnalite1_2_2 import *
+from Fonctionnalite1_2_3 import *
+from Fonctionnalite1_2_4 import *
+from Fonctionnalite1_2_5 import *
+from Fonctionnalite1_4 import *
 import numpy as np
 import pandas as pd
 
@@ -53,3 +53,6 @@ def donnees_brutes_candidat(filepath,filepathtest) :
                 ['Taille fonction moyenne', donnees_brutes['Taille fonctions'][2]]])
     pd.table = pd.DataFrame(data=table[1:,1:], index=table[1:,0], columns=table[0,1:])
     return(pd.table)
+
+filepath='C:/Users/Gros/PycharmProjects/Lequipe/EventCandidatA.rb'
+filepathtest='C:/Users/Gros/PycharmProjects/Lequipe/EventCandidatATest.rb'
