@@ -7,9 +7,9 @@ from Fonctionnalite2_2_4 import *
 from Fonctionnalite2_2_5 import *
 
 def data2(filepath,filepathtest):
-    """Renvoie les données brutes des critères pour analyser un fichier Ruby d'un candidat
+    """Renvoie les donnees brutes des critères pour analyser un fichier Ruby d'un candidat
     :param filepath : fichier ruby à analyser
-    :return dict : dictionnaire contenant le critère et sa valeur"""
+    :return dict : dictionnaire contenant le critere et sa valeur"""
     dict={}
     dict['Longueur nom fonction']=longueur_nom_fonctions(filepath)
     dict['Longueur nom variable']=longueur_nom_variables(filepath)
