@@ -26,14 +26,23 @@ def test_nombre_duplications(emplacement_projet):
      :param: l'emplacement du projet pour completer le filepath"""
      assert count_duplications(emplacement_projet + "Lequipe/EventCandidatA.rb") == 0
 
-def test_singulier(emplacement_projet):
-    """teste la fonction singulier
-    :param: l'emplacement du projet pour completer le filepath"""
+def test_singulier():
+    """teste la fonction singulier"""
     assert singulier('weathers')== 'weather'
 
-def
+def test_proportion_True():
+    """teste la fonction proportion_True"""
+    assert proportion_True( ['True','False','False','True']) == 0.5
 
 
+def test_fonctions_comprehensibles(emplacement_projet):
+    """teste la fonction fonctions_comprehensibles
+    :param: l'emplacement du projet pour completer le filepath"""
+    assert type(fonctions_comprehensibles( emplacement_projet + 'Lequipe/EventCandidatA.rb')) == float
 
 
+def test_variables_comprehensibles(emplacement_projet):
+    """teste la fonction varaibles_comprehensibles
+    :param: l'emplacement du projet pour completer le filepath"""
+    assert type(variables_comprehensibles( emplacement_projet + 'Lequipe/EventCandidatA.rb')) == float
 
