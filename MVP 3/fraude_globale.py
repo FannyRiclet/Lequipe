@@ -4,13 +4,11 @@ import numpy as np
 
 #comparaison_deux_candidats
 #chaque candidat a un dico associé
-
-liste_noms_candidats=
-liste_filepath_candidats=
-liste_filepath_test_candidats=
-liste_criteres=
-
-from Fonctionnalite3_2 import comparaison_deux_candidats
+liste_noms_candidats=['CandidatA','CandidatB','CandidatC']
+liste_filepath_candidats=[print('{}/Event{}.rb'.format(filepath,x)) for x in liste_noms_candidats]
+liste_filepath_test_candidats=[print('{}/Event{}Test.rb'.format(filepath,x)) for x in liste_noms_candidats]
+#liste_criteres=
+#from Fonctionnalite3_2 import comparaison_deux_candidats
 
 
 def comparaison_globale(fp_candidat, fp_candidat_test):
