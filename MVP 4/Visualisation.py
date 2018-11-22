@@ -17,9 +17,9 @@ def visualisation (name_candidat):
     for x in range(n2):
         X2.append(Tableau2[k][0])
         Y2.append(Tableau2[k][1])
-    plot(X1,Y1)
-    plot(X2,Y2)
-    show()
+    plt.plot(X1,Y1)
+    plt.plot(X2,Y2)
+    plt.show()
 
 
 
