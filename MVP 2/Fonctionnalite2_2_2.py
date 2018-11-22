@@ -21,4 +21,3 @@ def longueur_nom_variables(filepath):
                 liste_longueurs.append(count)
     return([liste_longueurs, sum(liste_longueurs)/len(liste_longueurs)])
 
-
