@@ -1,6 +1,9 @@
 import sys
 import numpy as np
 
+def les_filepath(filepath,Nom_Candidat): #filepath et Nom_Candidat chaines de caractères
+    return ('{}/Event{}.rb'.format(filepath,Nom_Candidat),'{}/Event{}Test.rb'.format(filepath,Nom_Candidat))
+
 sys.path.append('../MVP 1')
 from Resultat_candidats import *
 from Fonctionnalite1_2_1 import *
