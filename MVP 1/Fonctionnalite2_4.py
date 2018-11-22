@@ -12,7 +12,7 @@ def count_variables(filepath) :
                     for char in line :
                         if char == "," :
                             count +=1
-            elif " = " in line : #compte les autres variables
+            elif " = " in line and "where" not in line : #compte les autres variables
                 count+=1
     return(count)
 

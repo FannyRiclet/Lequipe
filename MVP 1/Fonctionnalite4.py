@@ -1,6 +1,5 @@
-
 from Fonctionnalite2_5 import *
-from Analyse_Globale import *
+from Resultat_candidats import *
 
 def note_functions(dict, filepath):
     if 4<=dict['Nombre fonctions']<=6:
@@ -50,13 +49,19 @@ def note_rapport_tests_fonctions(dict):
 9 : 0,18
 10 : 0,2'''
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> f04dd30791a5032a126f2f26a092b7a56fd8c9be
 def note_rapport_comm_ligne(dict):
     nb_comm=dict['Nombre commentaires']
     nb_lignes=sum(dict['Taille fonctions'][0])
     r=nb_comm/nb_lignes
     return (r*1000)/2
+<<<<<<< HEAD
 
+=======
+>>>>>>> f04dd30791a5032a126f2f26a092b7a56fd8c9be
 
 
 def rapport_variable_fonction(dico) :
