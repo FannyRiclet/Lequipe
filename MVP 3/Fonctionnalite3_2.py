@@ -12,7 +12,7 @@ def comparaison_deux_candidats(filepath1,filepathtest1, filepath2, filepathtest2
     :param filepathtest2 : fichier test ruby du candidat2
     :return: Un dictionnaire contenant le nom du critere et le taux de ressemblance pour ce critere
     """
-    liste_criteres = data_finale(filepath1,filepathtest1)
+    liste_criteres = data_finale(filepath1,filepathtest1).keys()
     dict1=data_finale(filepath1,filepathtest1)
     dict2=data_finale(filepath2, filepathtest2)
     dico={}

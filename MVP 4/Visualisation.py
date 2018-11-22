@@ -11,15 +11,20 @@ def visualisation_1candidat(Nom_dev, Nom_Candidat):
     Y1=[]
     X2=[]
     Y2=[]
-    for k in range(2,n1):
+    for k in range(3,n1):
         X1.append(Data[k][0])
         Y1.append(Data[k][1])
-    for k in range(2,n2):
+    for k in range(3,n2):
         X2.append(Note[k][0])
         Y2.append(Note[k][1])
-    plt.plot(X1,Y1)
-    plt.plot(X2,Y2)
+    plt.plot.scatter(X1,Y1, s=40, c='blue', label='Données brutes')
+    plt.title('Analyse données code candidat')
     plt.show()
+
+    plt.plot.scatter(X2,Y2, s=40, c='orange', label='Note critères')
+    plt.title('Analyse critères code candidat')
+    plt.show()
+
 
 visualisation_1candidat('Gros','CandidatA')
 
