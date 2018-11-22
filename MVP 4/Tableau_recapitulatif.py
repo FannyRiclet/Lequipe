@@ -42,12 +42,15 @@ def data_finale(filepath,filpathtest) :
 def note_candidat(Nom_dev,Nom_Candidat) :
     filepath,filepathtest=les_filepath(Nom_dev,Nom_Candidat)[0],les_filepath(Nom_dev,Nom_Candidat)[1]
     donnees_brutes=data(filepath,filepathtest)
-    table=np.array([['','Notes'],
+    table=np.array([['Note',Nom_Candidat],
+                ['Filepath', filepath],
+                ['Filepathtest', filepathtest],
                 ['Nombre fonctions',note_functions(donnees_brutes,filepath)],
                 ['Rapport test/fonction',note_rapport_tests_fonctions(donnees_brutes)],
                 ['Rapport commentaire/ligne',note_rapport_comm_ligne(donnees_brutes)]])
     pd.table=pd.DataFrame(data=table[1:,1:], index=table[1:,0], columns=table[0,1:])
-    return(pd.table)
+    print(pd.table)
+    return(table)
 
 
 def donnees_brutes_candidat_finales(Nom_dev,Nom_Candidat) :
@@ -70,6 +73,6 @@ def donnees_brutes_candidat_finales(Nom_dev,Nom_Candidat) :
                     ])
     pd.table = pd.DataFrame(data=table[1:,1:], index=table[1:,0], columns=table[0,1:])
     print(pd.table)
-    return(pd.table)
+    return(table)
 
 donnees_brutes_candidat_finales('Gros','CandidatA')
