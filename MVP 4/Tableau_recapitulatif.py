@@ -9,6 +9,7 @@ from Fonctionnalite1_2_4 import *
 from Fonctionnalite1_2_5 import *
 from Fonctionnalite1_4 import *
 
+
 #sys.path.remove('../MVP 1')
 
 sys.path.append('../MVP 2')
