@@ -18,7 +18,7 @@ Tableau récapitulatif des critères avec leur valeur
 Tableau récapitulatif des notes données sur certains critères
 
 
-## MVP2 : Ajoût de critères plus qualitatifs
+## MVP2 : Ajout de critères plus qualitatifs
 
 ### Etape 1 : Etude du script Ruby
 Choix des critères : analyse plus en détails
