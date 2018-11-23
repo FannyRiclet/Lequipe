@@ -81,7 +81,7 @@ def compare_blocs_candidats_1_a_2(filepath1,filepathtest1,filepath2,filepathtest
     """Comparaison du programme du candidat 1 à celui du candidat 2
     :param : liens des fichiers contenant les programmes et programmes tests
     :return : proportion des blocs des fichiers 1 que l'on retrouve dans les fichiers 2 (d'abord programme puis programme test)"""
-    prop = compare_1_a_2(filepath1,filepath2)
-    prop_test = compare_1_a_2(filepathtest1,filepathtest2)
+    prop = compare_blocs_1_a_2(filepath1,filepath2)
+    prop_test = compare_blocs_1_a_2(filepathtest1,filepathtest2)
     return(prop,prop_test)
 
