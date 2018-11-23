@@ -32,21 +32,21 @@ def data_finale(filepath,filepathtest) :
     :return dict : dictionnaire contenant les critère et leur valeur"""
     donnees_brutes=data(filepath,filepathtest)
     dict={}
-    dict['Nombre fonctions']=count_functions(filepath)
-    dict['Nombre tests']=count_tests(filepathtest)
-    dict['Nombre commentaires']=commentaires(filepath)
-    dict['Nombre variables']=count_variables(filepath)
-    dict['Taille fonctions']=function_size(filepath)[2]
-    dict['Longueur nom fonction']=longueur_nom_fonctions(filepath)[1]
-    dict['Longueur nom variable']=longueur_nom_variables(filepath)[1]
-    dict['Nombre imbrications']= count_imbrication(filepath)
-    dict['Nombre duplications']=nombre_duplications(filepath)
-    dict['Nom fonction pertinent']= fonctions_comprehensibles(filepath)
-    dict['Nom variable pertinent']= variables_comprehensibles(filepath)
-    dict['Note nb fonctions']= note_functions(donnees_brutes,filepath)
-    dict['Rapport test/fonction']= note_rapport_tests_fonctions(donnees_brutes)
-    dict['Rapport variable/fonction']= rapport_variable_fonction(donnees_brutes)
-    dict['Rapport comm/lignes']=note_rapport_comm_ligne(donnees_brutes, filepath)
+    dict['Nb fct']=count_functions(filepath)
+    dict['Nb tests']=count_tests(filepathtest)
+    dict['Nb comm']=commentaires(filepath)
+    dict['Nb var']=count_variables(filepath)
+    dict['Fct length']=function_size(filepath)[2]
+    dict['Name fct l']=longueur_nom_fonctions(filepath)[1]
+    dict['Name var l']=longueur_nom_variables(filepath)[1]
+    dict['Nb boucle']= count_imbrication(filepath)
+    dict['Nb dupl']=nombre_duplications(filepath)
+    dict['rel fct nam']= fonctions_comprehensibles(filepath)
+    dict['rel var nam']= variables_comprehensibles(filepath)
+    dict['nb fct']= note_functions(donnees_brutes,filepath)
+    dict['Test/fct']= note_rapport_tests_fonctions(donnees_brutes)
+    dict['Var/fct']= rapport_variable_fonction(donnees_brutes)
+    dict['Com/lines']=note_rapport_comm_ligne(donnees_brutes, filepath)
     return(dict)
 
 liste_noms_candidats=['CandidatA','CandidatB','CandidatC']
