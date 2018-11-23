@@ -31,6 +31,5 @@ def visualisation_1candidat(Nom_dev, Nom_Candidat):
     plt.title('Analyse critères code candidat')
     plt.show()
 
-
 visualisation_1candidat('Gros','CandidatA')
 

@@ -3,30 +3,30 @@ import pytest
 def les_filepath(Nom_dev,Nom_Candidat): #nom du developpeur et Nom_Candidat chaines de caractères
     return(['C:/Users/{}/PycharmProjects/Lequipe/Event{}.rb'.format(Nom_dev,Nom_Candidat),'C:/Users/{}/PycharmProjects/Lequipe/Event{}Test.rb'.format(Nom_dev,Nom_Candidat)])
 
+sys.path.append('../MVP 1')
 
-from Fonctionnalite1_2_1 import *
 from Fonctionnalite1_2_2 import *
 from Fonctionnalite1_2_3 import *
 from Fonctionnalite1_2_4 import *
 from Fonctionnalite1_2_5 import *
 
 
-def test_count_functions(Nom_dev,Nom_Candidat) :
+def test_count_functions(Nom_dev) :
     """test la fonction count_functions
     :param emplacement_projet : lien pour accéder au projet Lequipe (ex : C:/Users/Kumquat/Document/ ou C:/Users/Gros/PycharmProjects/)"""
-    assert count_functions(les_filepath(Nom_dev,Nom_Candidat)[0]) == 10
+    assert count_functions(les_filepath(Nom_dev,"CandidatA")[0]) == 10
 
-def test_count_tests(Nom_dev,Nom_Candidat) :
-    assert count_tests(les_filepath(Nom_dev,Nom_Candidat)[1]) == 13
+def test_count_tests(Nom_dev) :
+    assert count_tests(les_filepath(Nom_dev,"CandidatA")[1]) == 13
 
 def test_commentaires(Nom_dev,Nom_Candidat) :
-    assert commentaires(les_filepath(Nom_dev,Nom_Candidat)[0]) == 21
+    assert commentaires(les_filepath(Nom_dev,"CandidatB")[0]) == 21
 
-def test_count_variables(Nom_dev,Nom_Candidat) :
-    assert count_variables(les_filepath(Nom_dev,Nom_Candidat)[0]) == 10
+def test_count_variables(Nom_dev) :
+    assert count_variables(les_filepath(Nom_dev,"CandidatA")[0]) == 10
 
-def test_function_size(Nom_dev,Nom_Candidat) :
-    assert function_size(les_filepath(Nom_dev,Nom_Candidat)[0]) == ([13,6,9,12,8,8,8], 13, 64/7)
+def test_function_size(Nom_dev) :
+    assert function_size(les_filepath(Nom_dev,"CandidatB")[0]) == ([13,6,9,12,8,8,8], 13, 64/7)
     
 
 from Resultat_candidats import *

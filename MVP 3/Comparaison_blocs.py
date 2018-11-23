@@ -36,7 +36,6 @@ def extraction_blocs(filepath) :
                 k += 1
 
             list_blocs.append(bloc)
-
         return(list_blocs)
 
 
@@ -61,7 +60,7 @@ def compare_2_blocs(bloc1,bloc2) :
         return(True)
 
 
-def compare_1_a_2(filepath1,filepath2) :
+def compare_blocs_1_a_2(filepath1,filepath2) :
     """Comparaison du fichier 1 au fichier 2
     :param filepath1, filepath2 : liens des programmes 1 et 2
     :return : proportion de blocs du fichier 1 que l'on retrouve dans le fichier 2"""
@@ -76,7 +75,7 @@ def compare_1_a_2(filepath1,filepath2) :
     return(compteur_True/longueur)
 
 
-def compare_candidats_1_a_2(filepath1,filepathtest1,filepath2,filepathtest2) :
+def compare_blocs_candidats_1_a_2(filepath1,filepathtest1,filepath2,filepathtest2) :
     """Comparaison du programme du candidat 1 à celui du candidat 2
     :param : liens des fichiers contenant les programmes et programmes tests
     :return : proportion des blocs des fichiers 1 que l'on retrouve dans les fichiers 2 (d'abord programme puis programme test)"""
