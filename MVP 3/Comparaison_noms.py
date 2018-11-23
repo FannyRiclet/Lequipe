@@ -60,7 +60,7 @@ def noms_variables(filepath):
 
 def ordre_alphabetique() :
     """Renvoie un dictionnaire définissant l'ordre alphabetique"""
-    alphabet = "abcdefghijklmnopqrstuvwxyz.?_"
+    alphabet = "abcdefghijklmnopqrstuvwxyz.?_:@=[](), "
     dico_alphabet = {}
     for i in range(0,len(alphabet)) :
         dico_alphabet[alphabet[i]] = i
@@ -103,13 +103,9 @@ def compare_noms(filepath1,filepathtest1,filepath2,filepathtest2) :
     :param : liens des différents programmes ruby pour 2 candidats différents
     :return : pourcentage de ressemblance pour : nom des fonctions, noms des variables, noms des fonctions dans les test, noms des variables dans les tests, moyenne"""
     list_noms_fct1 = sorted(noms_fonctions(filepath1))
-    print(list_noms_fct1)
     list_noms_var1 = sorted(noms_variables(filepath1))
-    print(list_noms_var1)
     list_noms_fct2 = sorted(noms_fonctions(filepath2))
-    print(list_noms_fct2)
     list_noms_var2 = sorted(noms_variables(filepath2))
-    print(list_noms_var2)
     list_noms_fct_test1 = sorted(noms_fonctions(filepathtest1))
     list_noms_var_test1 = sorted(noms_variables(filepathtest1))
     list_noms_fct_test2 = sorted(noms_fonctions(filepathtest2))
