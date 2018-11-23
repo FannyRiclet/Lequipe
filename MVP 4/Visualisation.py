@@ -1,35 +1,18 @@
 from Tableau_recapitulatif import *
-import numpy as np
+from Comparaison_candidats import *
 import matplotlib.pyplot as plt
 
 def visualisation_1candidat(Nom_dev, Nom_Candidat):
-    Data=donnees_brutes_candidat_finales(Nom_dev,Nom_Candidat)
-    Note=note_candidat(Nom_dev,Nom_Candidat)
-    n1=np.shape(Data)[0]
-    n2=np.shape(Note)[0]
-    X1=[]
-    Y1=[]
-    X2=[]
-    Y2=[]
-    for k in range(3,n1):
-        X1.append(Data[k][0])
-        Y1.append(Data[k][1])
-    for k in range(3,n2):
-        X2.append(Note[k][0])
-        Y2.append(Note[k][1])
-
-    plt.scatter(np.array(X2),np.array(Y2), s=40, c='orange', label='Note critères')
-    plt.title('Analyse critères code candidat')
-    plt.axis()
+    df=donnees_finales(Nom_dev,Nom_Candidat).transpose()
+    df.plot()
     plt.show()
 
-    plt.scatter(X1,Y1, s=40, c='blue', label='Données brutes')
-    plt.title('Analyse données code candidat')
+liste_noms_candidats=['CandidatA','CandidatB','CandidatC']
+
+def visualisation_candidats(Nom_dev,liste_noms_candidats) :
+    df=data_candidats(Nom_dev, liste_noms_candidats).transpose()
+    df.plot()
     plt.show()
 
-    plt.scatter(X2,Y2, s=40, c='orange', label='Note critères')
-    plt.title('Analyse critères code candidat')
-    plt.show()
-
-visualisation_1candidat('Gros','CandidatA')
-
+visualisation_1candidat('Gros','CandidatC')
+visualisation_candidats('Gros',liste_noms_candidats)

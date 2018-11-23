@@ -22,8 +22,10 @@ from Fonctionnalite2_2_5 import *
 liste_noms_candidats=['CandidatA','CandidatB','CandidatC']
 
 def data_candidats(Nom_dev, liste_noms_candidats) :
-    df=donnees_brutes_candidat_finales(Nom_dev,liste_noms_candidats[0])
+    df=donnees_finales(Nom_dev,liste_noms_candidats[0])
     for k in range(1,len(liste_noms_candidats)) :
-        df1=donnees_brutes_candidat_finales(Nom_dev,liste_noms_candidats[k])
+        df1=donnees_finales(Nom_dev,liste_noms_candidats[k])
         df=df.append(df1)
     return(df)
+
+print(data_candidats('Gros', liste_noms_candidats).transpose())
