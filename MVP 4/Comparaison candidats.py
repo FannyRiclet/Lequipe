@@ -1,5 +1,4 @@
 import sys
-import numpy as np
 
 from Tableau_recapitulatif import *
 
@@ -23,9 +22,9 @@ from Fonctionnalite2_2_5 import *
 liste_noms_candidats=['CandidatA','CandidatB','CandidatC']
 
 def data_candidats(Nom_dev, liste_noms_candidats) :
-    table=donnees_brutes_candidat_finales(Nom_dev,liste_noms_candidats[0])
+    df=donnees_brutes_candidat_finales(Nom_dev,liste_noms_candidats[0])
     for k in range(1,len(liste_noms_candidats)) :
-        column=donnees_brutes_candidat_finales(Nom_dev,liste_noms_candidats[k])[:,1]
-        table=np.c_[table,column]
-    print(pd.DataFrame(data=table[1:,1:], index=table[1:,0], columns=table[0,1:]))
-    return(table)
+        df1=donnees_brutes_candidat_finales(Nom_dev,liste_noms_candidats[k])
+        df=df.append(df1)
+    return(df)
+    print(df)

@@ -25,7 +25,11 @@ def data(filepath,filepathtest):
 
 def dic_note_candidat(filepath,filepathtest) :
     donnees_brutes=data(filepath,filepathtest)
-    dico={'Nombre fonctions' : note_functions(donnees_brutes,filepath),'Rapport test/fonction' : note_rapport_tests_fonctions(donnees_brutes),'Rapport variable/fonction': rapport_variable_fonction(donnees_brutes)}
+    dico={}
+    dico=['Nombre fonctions'}=note_functions(donnees_brutes,filepath)
+    dico=['Rapport test/fonction']= note_rapport_tests_fonctions(donnees_brutes)
+    dico=['Rapport variable/fonction']= rapport_variable_fonction(donnees_brutes)
+    dico=['Rapport comm/lignes']=note_rapport_comm_ligne(donnees_brutes)
     return(dico)
 
 def note_candidat(Nom_dev,Nom_Candidat) :

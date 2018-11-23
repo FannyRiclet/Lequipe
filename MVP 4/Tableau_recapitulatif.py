@@ -39,8 +39,8 @@ def data_finale(filepath,filepathtest) :
     dict['Note nb fonctions']= note_functions(donnees_brutes,filepath)
     dict['Rapport test/fonction']= note_rapport_tests_fonctions(donnees_brutes)
     dict['Rapport variable/fonction']= rapport_variable_fonction(donnees_brutes)
+    dict['Rapport comm/lignes']=note_rapport_comm_ligne(donnees_brutes)
     return(dict)
-
 
 liste_noms_candidats=['CandidatA','CandidatB','CandidatC']
 
@@ -48,9 +48,5 @@ def donnees_brutes_candidat_finales(Nom_dev,Nom_Candidat) :
     filepath,filepathtest = les_filepath(Nom_dev,Nom_Candidat)[0] , les_filepath(Nom_dev,Nom_Candidat)[1]
     data=data_finale(filepath,filepathtest)
     df = pd.DataFrame(data, index=[Nom_Candidat])
-    print(df)
     return(df)
-
-donnees_brutes_candidat_finales('Gros','CandidatA')
-
 
