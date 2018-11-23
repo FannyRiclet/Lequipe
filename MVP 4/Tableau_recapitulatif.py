@@ -46,12 +46,12 @@ def data_finale(filepath,filepathtest) :
     dict['Note nb fonctions']= note_functions(donnees_brutes,filepath)
     dict['Rapport test/fonction']= note_rapport_tests_fonctions(donnees_brutes)
     dict['Rapport variable/fonction']= rapport_variable_fonction(donnees_brutes)
-    dict['Rapport comm/lignes']=note_rapport_comm_ligne(donnees_brutes)
+    dict['Rapport comm/lignes']=note_rapport_comm_ligne(donnees_brutes, filepath)
     return(dict)
 
 liste_noms_candidats=['CandidatA','CandidatB','CandidatC']
 
-def donnees_brutes_candidat_finales(Nom_dev,Nom_Candidat) :
+def donnees_finales(Nom_dev,Nom_Candidat) :
     """Renvoie les données des critères (de MVP1et MVP2) pour analyser un fichier Ruby d'un candidat dans un tableau panda
     :param Nom_dev : nom du développeur
     :param Nom_Candidat : nom du Candidat (ex : CandidatA)
