@@ -1,6 +1,9 @@
 #nom des variables
 
 def longueur_nom_variables(filepath):
+    """Renvoie les longueurs des noms des variables dans un programme ruby
+    :param filepath : lien du programme ruby
+    :return (list of int) liste des longueurs des noms, (float) moyenne des longueurs des noms des variables"""
     with open(filepath,'r') as file :
         lines=file.readlines()
         liste_longueurs=[]

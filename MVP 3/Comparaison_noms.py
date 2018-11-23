@@ -1,3 +1,5 @@
+#Comparaison des programmes des candidats en comparant les noms des fonctions et ds variables
+
 def noms_fonctions(filepath):
     """Extrait les noms de fonctions d'un programme ruby
     :param filepath : lien du programme ruby
