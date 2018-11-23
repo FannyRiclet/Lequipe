@@ -5,7 +5,11 @@ from Fonctionnalite2_2_3 import *
 from Fonctionnalite2_2_4 import *
 from Fonctionnalite2_2_5 import *
 
-def les_filepath(Nom_dev,Nom_Candidat): #nom du developpeur et Nom_Candidat chaines de caractères
+def les_filepath(Nom_dev,Nom_Candidat):
+    """Renvoie les liens pour accéder aux programmes d'un candidat
+    :param Nom_dev : nom du développeur
+    :param Nom_Candidat : nom du Candidat (ex : CandidatA)
+    :return (tuple of str) lien du programme du candidat, lien du programme test du candidat"""
     return(['C:/Users/{}/PycharmProjects/Lequipe/Event{}.rb'.format(Nom_dev,Nom_Candidat),'C:/Users/{}/PycharmProjects/Lequipe/Event{}Test.rb'.format(Nom_dev,Nom_Candidat)])
 
 def data2(filepath,filepathtest):
@@ -22,6 +26,10 @@ def data2(filepath,filepathtest):
     return(dict)
 
 def donnees_brutes_candidat2(Nom_dev,Nom_Candidat) :
+    """Renvoie les donnees brutes des critères pour analyser un fichier Ruby d'un candidat
+    :param Nom_dev : nom du développeur
+    :param Nom_Candidat : nom du Candidat (ex : CandidatA)
+    :return df : tableau panda contenant le critere et sa valeur"""
     filepath,filepathtest=les_filepath(Nom_dev,Nom_Candidat)[0],les_filepath(Nom_dev,Nom_Candidat)[1]
     donnees_brutes=data2(filepath,filepathtest)
     df = pd.DataFrame(donnees_brutes, index=[Nom_Candidat])

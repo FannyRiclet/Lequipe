@@ -19,7 +19,7 @@ def test_count_functions(Nom_dev) :
 def test_count_tests(Nom_dev) :
     assert count_tests(les_filepath(Nom_dev,"CandidatA")[1]) == 13
 
-def test_commentaires(Nom_dev,Nom_Candidat) :
+def test_commentaires(Nom_dev) :
     assert commentaires(les_filepath(Nom_dev,"CandidatB")[0]) == 21
 
 def test_count_variables(Nom_dev) :

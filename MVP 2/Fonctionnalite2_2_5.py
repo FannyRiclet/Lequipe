@@ -1,7 +1,7 @@
 import nltk
 nltk.download() #choisir words dans Corpora
 from nltk.corpus import words
-word_list = words.words()
+word_list = words.words() #liste des mots anglais
 
 alphabet = 'abcdefghijklmnopqrstuvwxyz'
 

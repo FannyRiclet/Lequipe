@@ -1,6 +1,9 @@
 #nom des fonctions
 
 def longueur_nom_fonctions(filepath):
+    """Renvoie les longueurs des noms des fonctions dans un programme ruby
+    :param filepath : lien du programme ruby
+    :return (list of int) liste des longueurs des noms, (float) moyenne des longueurs des noms des fonctions"""
     with open(filepath,'r') as file :
         lines=file.readlines()
         liste_longueurs=[]
