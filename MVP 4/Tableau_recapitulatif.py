@@ -22,7 +22,8 @@ from Fonctionnalite2_2_3 import *
 from Fonctionnalite2_2_4 import *
 from Fonctionnalite2_2_5 import *
 
-def data_finale(filepath,filpathtest) :
+def data_finale(filepath,filepathtest) :
+    donnees_brutes=data(filepath,filepathtest)
     dict={}
     dict['Nombre fonctions']=count_functions(filepath)
     dict['Nombre tests']=count_tests(filepathtest)
@@ -35,7 +36,11 @@ def data_finale(filepath,filpathtest) :
     dict['Nombre duplications']=nombre_duplications(filepath)
     dict['Nom fonction pertinent']= fonctions_comprehensibles(filepath)
     dict['Nom variable pertinent']= variables_comprehensibles(filepath)
+    dict['Note nb fonctions']= note_functions(donnees_brutes,filepath)
+    dict['Rapport test/fonction']= note_rapport_tests_fonctions(donnees_brutes)
+    dict['Rapport variable/fonction']= rapport_variable_fonction(donnees_brutes)
     return(dict)
+
 
 liste_noms_candidats=['CandidatA','CandidatB','CandidatC']
 
@@ -46,11 +51,6 @@ def donnees_brutes_candidat_finales(Nom_dev,Nom_Candidat) :
     print(df)
     return(df)
 
-def notes_candidat_finales(filepath,filepathtest) :
-    notes=data(filepath,filepathtest)
-    note=np.array([['','Notes'],
-                ['Nombre fonctions',note_functions(donnees_brutes,filepath)],
-                ['Rapport test/fonction',note_rapport_tests_fonctions(donnees_brutes)],
-                ['Rapport commentaire/ligne',note_rapport_comm_ligne(donnees_brutes)]])
-    pd.table=pd.DataFrame(data=table[1:,1:], index=table[1:,0], columns=table[0,1:])
-    return(pd.table)
+donnees_brutes_candidat_finales('Gros','CandidatA')
+
+

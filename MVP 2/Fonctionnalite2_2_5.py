@@ -98,7 +98,7 @@ def variables_comprehensibles(filepath) :
                     words_in_english.append(name_in_english(nom_var))
 
 
-        return(proportion_True(words_in_english))
+        return(proportion_True(words_in_english)*100)
 
 
 def fonctions_comprehensibles(filepath) :
@@ -119,4 +119,4 @@ def fonctions_comprehensibles(filepath) :
 
                 words_in_english.append(name_in_english(nom_fct))
                 
-        return(proportion_True(words_in_english))
+        return(proportion_True(words_in_english)*100)
