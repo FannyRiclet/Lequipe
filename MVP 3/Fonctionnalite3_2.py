@@ -30,3 +30,5 @@ def comparaison_deux_candidats(filepath1,filepathtest1, filepath2, filepathtest2
             else :
                 dico[x]=min(avg1,avg2)/max(avg1,avg2)*100
     return(dico)
+
+import numpy as np
