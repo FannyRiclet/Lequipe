@@ -27,4 +27,3 @@ def data_candidats(Nom_dev, liste_noms_candidats) :
         df1=donnees_brutes_candidat_finales(Nom_dev,liste_noms_candidats[k])
         df=df.append(df1)
     return(df)
-    print(df)

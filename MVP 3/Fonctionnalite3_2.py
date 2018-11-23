@@ -27,5 +27,4 @@ def comparaison_deux_candidats(Nom_dev, Nom_Candidat1, Nom_Candidat2) :
                 dico[x]=0
             else :
                 dico[x]=min(dict1[x],dict2[x])/max(dict1[x],dict2[x])*100
-    print(dico)
     return(dico)

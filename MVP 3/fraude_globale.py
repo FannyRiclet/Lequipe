@@ -26,12 +26,10 @@ def comparaison_globale(Nom_dev,Nom_Candidat,liste_noms_candidats):
 
     data=comparaison_deux_candidats(Nom_dev, Nom_Candidat, liste_noms_candidats[0])
     df=pd.DataFrame(data, index=[liste_noms_candidats[0]])
-    liste_noms_candidats.remove('Nom_Candidat')
-    for k in range(1,liste_noms_candidats) :
+    liste_noms_candidats.remove(Nom_Candidat)
+    for k in range(1,len(liste_noms_candidats)) :
         data2=comparaison_deux_candidats(Nom_dev, Nom_Candidat, liste_noms_candidats[k])
         df2 = pd.DataFrame(data2, index=[liste_noms_candidats[k]])
         df=df.append(df2)
     print(df)
     return df
-
-comparaison_globale('Gros','CandidatB',liste_noms_candidats)
