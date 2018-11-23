@@ -7,6 +7,9 @@ from Fonctionnalite1_4 import *
 import numpy as np
 import pandas as pd
 
+def les_filepath(Nom_dev,Nom_Candidat): #nom du developpeur et Nom_Candidat chaines de caractères
+    return(['C:/Users/{}/PycharmProjects/Lequipe/Event{}.rb'.format(Nom_dev,Nom_Candidat),'C:/Users/{}/PycharmProjects/Lequipe/Event{}Test.rb'.format(Nom_dev,Nom_Candidat)])
+
 def data(filepath,filepathtest):
     """Renvoie les données brutes des critères pour analyser un fichier Ruby d'un candidat
     :param filepath : fichier ruby à analyser
@@ -16,28 +19,26 @@ def data(filepath,filepathtest):
     dict['Nombre tests']=count_tests(filepathtest)
     dict['Nombre commentaires']=commentaires(filepath)
     dict['Nombre variables']=count_variables(filepath)
-    dict['Taille fonctions']=function_size(filepath)
+    dict['Taille fonctions']=function_size(filepath)[2]
     return(dict)
 
-def note_candidat(filepath,filepathtest) :
+
+def dic_note_candidat(filepath,filepathtest) :
     donnees_brutes=data(filepath,filepathtest)
-    table=np.array([['','Notes'],
-                ['Nombre fonctions',note_functions(donnees_brutes,filepath)],
-                ['Rapport test/fonction',note_rapport_tests_fonctions(donnees_brutes)],
-                ['Rapport commentaire/ligne',note_rapport_comm_ligne(donnees_brutes)]])
-    pd.table=pd.DataFrame(data=table[1:,1:], index=table[1:,0], columns=table[0,1:])
-    return(pd.table)
+    dico={'Nombre fonctions' : note_functions(donnees_brutes,filepath),'Rapport test/fonction' : note_rapport_tests_fonctions(donnees_brutes),'Rapport variable/fonction': rapport_variable_fonction(donnees_brutes)}
+    return(dico)
+
+def note_candidat(Nom_dev,Nom_Candidat) :
+    filepath,filepathtest = les_filepath(Nom_dev,Nom_Candidat)[0] , les_filepath(Nom_dev,Nom_Candidat)[1]
+    dico=dic_note_candidat(filepath,filepathtest)
+    df=pd.DataFrame(dico, index=[Nom_Candidat])
+    print(df)
+    return(df)
 
 
-def donnees_brutes_candidat(filepath,filepathtest) :
+def donnees_brutes_candidat1(Nom_dev,Nom_Candidat) :
+    filepath,filepathtest=les_filepath(Nom_dev,Nom_Candidat)[0],les_filepath(Nom_dev,Nom_Candidat)[1]
     donnees_brutes=data(filepath,filepathtest)
-    table=np.array([['','Données brutes'],
-                ['Nombre fonctions',donnees_brutes['Nombre fonctions']],
-                ['Nombre tests',donnees_brutes['Nombre tests']],
-                ['Nombre commentaires',donnees_brutes['Nombre commentaires']],
-                ['Nombre variables', donnees_brutes['Nombre variables']],
-                ['Taille fonction moyenne', donnees_brutes['Taille fonctions'][2]]])
-    pd.table = pd.DataFrame(data=table[1:,1:], index=table[1:,0], columns=table[0,1:])
-    return(pd.table)
-
-
+    df = pd.DataFrame(donnees_brutes, index=[Nom_Candidat])
+    print(df)
+    return(df)
