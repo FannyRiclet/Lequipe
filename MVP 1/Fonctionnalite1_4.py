@@ -2,6 +2,10 @@ from Fonctionnalite1_2_5 import *
 from Resultat_candidats import *
 
 def note_functions(dict, filepath):
+    """Attribue une note suivant le nombre de fonctions
+    :param dict : dictionnaire issu de la fonction data ou data_finale
+    :param filepath : lien du programme ruby
+    :return note attribuée au nombre de fonctions"""
     if 4<=dict['Nombre fonctions']<=6:
         note=10
         for k in range(len(function_size(filepath)[0])):
@@ -27,6 +31,9 @@ def note_functions(dict, filepath):
 
 
 def note_rapport_tests_fonctions(dict):
+    """Attribue une note suivant les nombre de tests
+    :param dict : dictionnaire issu de la fonction data ou data_finale
+    :return note attribuée au nombre de tests (=rapport nb_onctions/nb_test ramené sur 10)"""
     nb_tests,nb_fonctions = dict['Nombre tests'],dict['Nombre fonctions']
     rapport = nb_tests/nb_fonctions
     if rapport > 1:
@@ -51,6 +58,9 @@ def note_rapport_tests_fonctions(dict):
 
 
 def note_rapport_comm_ligne(dict):
+    """Attribue une note suivant le nombre de commentaires
+    :param dict : dictionnaire issu de la fonction data ou data_finale
+    :return note attribuée au nombre de commentaires"""
     nb_comm=dict['Nombre commentaires']
     nb_lignes=sum(dict['Taille fonctions'][0])
     r=nb_comm/nb_lignes
@@ -59,7 +69,8 @@ def note_rapport_comm_ligne(dict):
 
 def rapport_variable_fonction(dico) :
     """Attribue une note au rapport du nombre de variables sur le nombre de fonctions
-    :param dico : dictionnaire issu du la fonction data """
+    :param dico : dictionnaire issu du la fonction data
+    :return note attribuée au nombre de variables"""
     nb_variable = dico['Nombrevariables']
     nb_fonctions = dico['Nombrefonctions']
     rapport = nb_variable/nb_fonctions

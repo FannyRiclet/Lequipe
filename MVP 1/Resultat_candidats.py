@@ -8,9 +8,9 @@ import numpy as np
 import pandas as pd
 
 def data(filepath,filepathtest):
-    """Renvoie les données brutes des critères pour analyser un fichier Ruby d'un candidat
+    """Renvoie les données brutes des critères (de MVP1)  pour analyser un fichier Ruby d'un candidat
     :param filepath : fichier ruby à analyser
-    :return dict : dictionnaire contenant le critère et sa valeur"""
+    :return dict : dictionnaire contenant les critère et leur valeur"""
     dict={}
     dict['Nombre fonctions']=count_functions(filepath)
     dict['Nombre tests']=count_tests(filepathtest)
@@ -20,6 +20,9 @@ def data(filepath,filepathtest):
     return(dict)
 
 def note_candidat(filepath,filepathtest) :
+    """Renvoie les notes associées aux critères (de MVP1) analyses dans un fichier Ruby d'un candidat
+    :param filepath, filepathtest : fichiers ruby à analyser
+    :return dict : dictionnaire contenant les critère et leur notes"""
     donnees_brutes=data(filepath,filepathtest)
     table=np.array([['','Notes'],
                 ['Nombre fonctions',note_functions(donnees_brutes,filepath)],
@@ -30,6 +33,9 @@ def note_candidat(filepath,filepathtest) :
 
 
 def donnees_brutes_candidat(filepath,filepathtest) :
+    """Renvoie les données brutes des critères (de MVP1) pour analyser un fichier Ruby d'un candidat dans un tableau panda
+    :param filepath,filepathtest : fichiers ruby à analyser
+    :return pd.table : tableau panda contenant les critère et leur valeur"""
     donnees_brutes=data(filepath,filepathtest)
     table=np.array([['','Données brutes'],
                 ['Nombre fonctions',donnees_brutes['Nombre fonctions']],
