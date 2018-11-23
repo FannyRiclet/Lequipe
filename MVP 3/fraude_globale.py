@@ -15,23 +15,23 @@ sys.path.append('../MVP 3')
 from Fonctionnalite3_2 import * #dont comparaison_deux_candidats
 
 
-def comparaison_globale(Nom_dev,filepath,filepathtest):
+def comparaison_globale(Nom_dev,Nom_Candidat,liste_noms_candidats):
     """Compare les codes d'un candidat avec les codes de tous les autres candidats
     en utilisant la fonction comparant deux candidats
-    :param filepath : filepath du candidat voulu
-    :param filepathtest : filepath test du candidat voulu
+    :param Nom_Candidat : nom candidat voulu
+    :param Nom_dev : nom developeur pour trouver le filepath
     :return : un tableau double entree qui, dans chaque colonne,
     donne le taux de ressemblance du code du candidat avec un autre
     candidat X, pour differents criteres (les lignes)"""
-    liste_criteres=data_candidats(Nom_dev,liste_noms_candidats)[:,0][3:]
-    T=np.array()
-    T[0][0]=0
-    T[0].append(liste_noms_candidats) #creation de la premiere ligne
-    T[:,0]=liste_criteres
-    for j in len(liste_noms_candidats):
-        filepath_j=data_candidats(Nom_dev,liste_noms_candidats)[1][j]
-        filepathtest_j=data_candidats(Nom_dev,liste_noms_candidats)[2][j]
-        dico=comparaison_deux_candidats(filepath, filepathtest, filepath_j, filepathtest_j)
-        for i in len(liste_criteres):
-            T[i,j]=dico[i]
-    return T
+
+    data=comparaison_deux_candidats(Nom_dev, Nom_Candidat, liste_noms_candidats[0])
+    df=pd.DataFrame(data, index=[liste_noms_candidats[0]])
+    liste_noms_candidats.remove('Nom_Candidat')
+    for k in range(1,liste_noms_candidats) :
+        data2=comparaison_deux_candidats(Nom_dev, Nom_Candidat, liste_noms_candidats[k])
+        df2 = pd.DataFrame(data2, index=[liste_noms_candidats[k]])
+        df=df.append(df2)
+    print(df)
+    return df
+
+comparaison_globale('Gros','CandidatB',liste_noms_candidats)

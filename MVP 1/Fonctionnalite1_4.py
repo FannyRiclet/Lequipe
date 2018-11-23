@@ -48,9 +48,9 @@ def note_rapport_tests_fonctions(dict):
 9 : 0,18
 10 : 0,2'''
 
-def note_rapport_comm_ligne(dict):
+def note_rapport_comm_ligne(dict,filepath):
     nb_comm=dict['Nombre commentaires']
-    nb_lignes=sum(dict['Taille fonctions'][0])
+    nb_lignes=sum(function_size(filepath)[0])
     r=nb_comm/nb_lignes
     return (r*1000)/2
 
