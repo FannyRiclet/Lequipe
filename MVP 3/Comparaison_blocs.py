@@ -1,3 +1,5 @@
+#Comparaison des programmes des candidats en comparants les différents blocs
+
 def ligne_end(chaine,k) :
     """Verifie que le ligne comporte le mot "end" à la bonne position dans une chaine de caractere
     :param chaine : chaine de caractere
